@@ -5,6 +5,8 @@ var routes = [
     url: './index.html',
     name: 'home',
   },
+
+
   // About page
   {
     path: '/about/',
@@ -61,6 +63,16 @@ var routes = [
         </div>\
       </div>\
     ',
+  },
+
+  {
+    path: '/tambahijin/',
+    componentUrl: './pages/ijin/tambahijin.html',
+  },
+
+  {
+    path: '/detailmenunggu/',
+    url: './pages/ijin/detailijinmenunggu.html',
   },
 
   // Components

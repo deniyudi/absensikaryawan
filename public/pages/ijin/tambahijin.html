@@ -1,0 +1,89 @@
+<template>
+<div class="page page-homepage light" data-name="homepage">
+    <div class="appbar">
+        <div class="appbar-inner">
+            <div class="left">
+                <a href="" class="link back icon-only">
+                    <i class="material-icons" style="color: black;font-size: 30px;">keyboard_arrow_left</i>
+                    <span class="" style="color: black;font-size: 18px;">Permintaan Absensi</span>
+                </a>
+            </div>
+           <div class="right">
+               <a href="#" class="link icon-only">
+                <button class="col button button-outline" style="text-transform: capitalize;">Kirim</button>
+               </a>
+           </div>
+        </div>
+    </div>
+
+    <div class="block mx-0 mt-2">
+        <div class="row">
+            <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
+                <p class=" mb-2 mt-1" style="font-size: 18px;">Alasan Absensi</p>
+                <!-- <p class="text-mute medium text-secondary mt-2" @click="openVerticalButtons">Pilih Alasan</p> -->
+                <div class="item-input-wrap input-dropdown-wrap">
+                    <select name="gender" placeholder="Please choose...">
+                      <option value="Sakit">Sakit</option>
+                      <option value="Acara Keluarga">Acara Keluarga</option>
+                      <option value="Cuti">Cuti</option>
+                      <option value="Tugas Keluar Kota">Tugas Keluar Kota</option>
+                      <option value="Cuti Hamil">Cuti Hamil</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-1 padding-vertical" style="border-bottom: 1px solid gray;">
+            <div class="col">
+                <p class=" mb-2 mt-1" style="font-size: 18px;">Absensi Dari</p>
+                <input type="date" value="today" placeholder="Pilih Tanggal">
+            </div>
+            <div class="col">
+                <p class=" mb-2 mt-1" style="font-size: 18px;">Sampai</p>
+                <input type="date" value="today" placeholder="Pilih Tanggal">
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
+                <p class=" mb-2 mt-1" style="font-size: 18px;">Masukkan Deskripsi</p>
+                <input type="text" placeholder="Deskripsi">
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col padding-vertical">
+                <p class=" mb-2 mt-1" style="font-size: 18px;">Lampiran</p>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="button button-raised button-large border-color-gray"><i class="fas fa-paperclip text-template" style="font-size: 20px;"></i>
+                            <span class="text-template" style="font-size: 16px;">Lampirkan Gambar atau Photo</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+
+<script>
+    return {
+      methods: {
+        openVerticalButtons: function () {
+          var app = this.$app;
+          app.dialog.create({
+            title: 'Pilih Alasan',
+            buttons: [
+              {
+                text: 'Button 1',
+              },
+              {
+                text: 'Button 2',
+              },
+              {
+                text: 'Button 3',
+              },
+            ],
+            verticalButtons: true,
+          }).open();
+        }
+      }
+    }
+  </script>

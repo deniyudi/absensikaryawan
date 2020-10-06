@@ -4,8 +4,8 @@
         <div class="toolbar-inner o-visible tabs-max-width">
             <a href="#tab-1" class="tab-link tab-link-active"><i class="material-icons">home</i></a>
             <a href="#tab-2" class="tab-link"><i class="material-icons">email</i></a>
-            <a href="#tab-3" class="tab-link"><i class="material-icons">account_balance_wallet</i></a>
-            <a href="#tab-4" class="tab-link"><i class="material-icons">widgets</i></a>
+            <a href="#tab-3" class="tab-link"><i class="material-icons">book</i></a>
+            <a href="#tab-4" class="tab-link"><i class="material-icons">history</i></a>
             <a href="#tab-5" class="tab-link"><i class="material-icons">account_circle</i></a>
         </div>
     </div>
@@ -19,7 +19,7 @@
                            <span class="new-notification"></span>
                            <i class="icon material-icons">menu</i>
                        </a> -->
-                       <a href="#" class="link icon-only">
+                       <a href="#" class="link icon-only panel-open" data-panel="left">
                         <i class="material-icons">account_circle</i>
                     </a>
                    </div>
@@ -643,7 +643,96 @@
             </div> -->
         </div>
         <div id="tab-2" class="page-content tab">
-            <div class="block mb-0">
+            <div class="fab fab-extended fab-right-bottom ">
+                <a href="/tambahijin/" class="bg-template">
+                  <i class="fas fa-plus text-color-white"></i>
+                </a>
+            </div>
+            <div class="appbar">
+                <div class="appbar-inner">
+                   <div class="title"><h5 class="page-subtitle mb-4">Perijinan</h5></div>
+                   <div class="right">
+                       <a href="#" class="link icon-only">
+                           <i class="material-icons">search</i>
+                       </a>
+                   </div>
+                </div>
+            </div>
+            <div class="block px-0 my-0">
+                <div class="toolbar tabbar toolbar-top mb-0 mt-0 no-shadow">
+                    <div class="toolbar-inner">
+                        <a class="button tab-link tab-link-active text-align-center" href="#tab11">Menunggu</a>
+                        <a class="button tab-link text-align-center" href="#tab22">Diterima</a>
+                        <a class="button tab-link text-align-center" href="#tab33">Ditolak</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="tabs">
+                <div class="tab tab-active" id="tab11">
+                    <div class="block mt-0">
+                        <div class="card padding-vertical">
+                            <a href="/detailmenunggu/">
+                            <div class="row mx-0 width-100 align-items-center">
+                                <div class="col-auto pr-0 align-self-center">
+                                    <div class="chip mx-0">
+                                        <div class="chip-label">Sakit (4 hari)</div>
+                                    </div>
+                                    <h6 class="font-weight-normal mb-2 mt-1" style="color: black;">Deni Yudi</h6>
+                                    <p class="text-mute medium text-secondary mt-1">Sakit</p>   
+                                    <h6 class="text-mute mt-0"  style="color:gray">05 Okt 2020 - 08 Okt 2020</h6>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="card padding-vertical">
+                            <div class="row mx-0 width-100 align-items-center">
+                                <div class="col-auto pr-0 align-self-center">
+                                    <div class="chip mx-0">
+                                        <div class="chip-label">Cuti (7 hari)</div>
+                                    </div>
+                                    <h6 class="font-weight-normal mb-2 mt-1">Erik Setiadi</h6>
+                                    <p class="text-mute medium text-secondary mt-1">Cuti</p>
+                                    <h6 class="text-mute mt-0 ">05 Okt 2020 - 11 Okt 2020</h6>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="tab" id="tab22">
+                    <div class="block mt-0">
+                        <div class="card padding-vertical">
+                            <div class="row mx-0 width-100 align-items-center">
+                                <div class="col-auto pr-0 align-self-center">
+                                    <div class="chip mx-0">
+                                        <div class="chip-label">Sakit (4 hari)</div>
+                                    </div>
+                                    <h6 class="font-weight-normal mb-2 mt-1">Deni Yudi</h6>
+                                    <p class="text-mute medium text-secondary mt-1">Sakit</p>
+                                    <h6 class="text-mute mt-0 ">05 Okt 2020 - 08 Okt 2020</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab" id="tab33">
+                    <div class="block mt-0">
+                        <div class="card padding-vertical">
+                            <div class="row mx-0 width-100 align-items-center">
+                                <div class="col-auto pr-0 align-self-center">
+                                    <div class="chip mx-0">
+                                        <div class="chip-label">Cuti (7 hari)</div>
+                                    </div>
+                                    <h6 class="font-weight-normal mb-2 mt-1">Erik Setiadi</h6>
+                                    <p class="text-mute medium text-secondary mt-1">Cuti</p>
+                                    <h6 class="text-mute mt-0 ">05 Okt 2020 - 11 Okt 2020</h6>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+              </div>
+
+            <!-- <div class="block mb-0">
                 <div class="card shadow mt-4 h-200 o-hidden">
                     <div class="card-content card-content-padding">
                         <h3 class="mb-0 font-weight-normal my-1">$ 1548.00</h3>
@@ -748,7 +837,6 @@
             <div class="block">
                 <div class="row">
                     <div class="col-12 px-0">
-                        <!-- Swiper -->
                         <div class="swiper-container offer-slide swiper-init" data-space-between="0" data-slides-per-view="auto">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
@@ -855,7 +943,6 @@
             </div>
             <div class="block-title">News Updates</div>
             <div class="block">
-                <!-- Swiper -->
                 <div class="swiper-container news-slide swiper-init" data-pagination='{"el": ".swiper-pagination"}' data-space-between="20" data-slides-per-view="2">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -895,13 +982,133 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div id="tab-3" class="page-content tab">
-            <div class="block mb-3">
+            <div class="appbar">
+                <div class="appbar-inner">
+                   <div class="title"><h5 class="page-subtitle mb-4">Jadwal</h5></div>
+                </div>
+            </div>
+
+            <div class="toolbar no-shadow">
+                <div class="toolbar-inner">
+                    <div class="left">
+                        <a href="#" class="link icon-only"><i class="icon icon-back color-black"></i></a>
+                    </div>
+                    <div class="center" style="font-size: 18px;">05 - 11 Okt 2020</div>
+                    <div class="right">
+                        <a href="#" class="link icon-only"><i class="icon icon-forward color-black"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block mx-0">
+                <div class="list">
+                    <ul>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">
+                            <div class="col text-align-center">
+                                <h6 class="font-weight-normal mb-0 mt-1" style="color: gray;">05</h6>
+                                <p class="text-mute medium text-secondary mt-1" style="color: gray;">Okt</p>
+                            </div>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title" style="font-weight: 500; font-size: 20px; color: gray;">Kerjaan</div>
+                            <div class="item-after"><strong>07:30 - 16:45</strong></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">
+                            <div class="col text-align-center">
+                                <h6 class="font-weight-normal mb-0 mt-1">06</h6>
+                                <p class="text-mute medium text-secondary mt-1">Okt</p>
+                            </div>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title" style="font-weight: 500; font-size: 20px;">Kerjaan</div>
+                            <div class="item-after"><strong>07:30 - 16:45</strong></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">
+                            <div class="col text-align-center">
+                                <h6 class="font-weight-normal mb-0 mt-1">07</h6>
+                                <p class="text-mute medium text-secondary mt-1">Okt</p>
+                            </div>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title" style="font-weight: 500; font-size: 20px;">Kerjaan</div>
+                            <div class="item-after"><strong>07:30 - 16:45</strong></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">
+                            <div class="col text-align-center">
+                                <h6 class="font-weight-normal mb-0 mt-1">08</h6>
+                                <p class="text-mute medium text-secondary mt-1">Okt</p>
+                            </div>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title" style="font-weight: 500; font-size: 20px;">Kerjaan</div>
+                            <div class="item-after"><strong>07:30 - 16:45</strong></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">
+                            <div class="col text-align-center">
+                                <h6 class="font-weight-normal mb-0 mt-1">09</h6>
+                                <p class="text-mute medium text-secondary mt-1">Okt</p>
+                            </div>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title" style="font-weight: 500; font-size: 20px;">Kerjaan</div>
+                            <div class="item-after"><strong>07:30 - 16:45</strong></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">
+                            <div class="col text-align-center">
+                                <h6 class="font-weight-normal mb-0 mt-1" style="color: red;">10</h6>
+                                <p class="text-mute medium text-secondary mt-1" style="color: red;">Okt</p>
+                            </div>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title" style="font-weight: 500;color: red; font-size: 20px;">Libur</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">
+                            <div class="col text-align-center">
+                                <h6 class="font-weight-normal mb-0 mt-1" style="color: red;">11</h6>
+                                <p class="text-mute medium text-secondary mt-1" style="color: red;">Okt</p>
+                            </div>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title" style="font-weight: 500;color: red; font-size: 20px;">Libur</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <div class="block mb-3">
                 <div class="row">
                     <div class="col">
                         <h3 class="mb-0 font-weight-normal mt-0">$ 1548.00</h3>
@@ -1059,7 +1266,7 @@
                 <div class="swiper-pagination"></div>
             </div>
             <div class="block px-0">
-                <!-- Swiper -->
+                
                 <div class="swiper-container offer-slide swiper-init" data-space-between="0" data-slides-per-view="auto">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -1182,7 +1389,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div id="tab-4" class="page-content tab">
 
@@ -1465,6 +1672,16 @@
             </div> -->
         </div>
         <div id="tab-5" class="page-content tab">
+            <!-- <div class="appbar">
+                <div class="appbar-inner">
+                   <div class="title"><h5 class="page-subtitle mb-4">Perijinan</h5></div>
+                   <div class="right">
+                       <a href="#" class="link icon-only">
+                           <i class="material-icons">search</i>
+                       </a>
+                   </div>
+                </div>
+            </div> -->
             <div class="block bg-template mt-0 mb-0" style="height: 270px;">
                 <div class="row text-align-center">
                     <div class="col">
@@ -1477,8 +1694,8 @@
                     </div>
                 </div>
             </div>
-            <div class="block px-0 mt-0">
-                <div class="toolbar tabbar toolbar-top mt-0 no-shadow">
+            <div class="block px-0 my-0">
+                <div class="toolbar tabbar toolbar-top mb-0 mt-0 no-shadow">
                     <div class="toolbar-inner">
                         <a class="button tab-link tab-link-active text-align-center" href="#tab1">Profile</a>
                         <a class="button tab-link text-align-center" href="#tab2">Contacts</a>
@@ -1486,27 +1703,244 @@
                     </div>
                   </div>
             </div>
-            <div class="page-content hide-navbar-on-scroll">
+            <div class="page-content">
                 <div class="tabs">
                   <div class="tab tab-active" id="tab1">
-                    <div class="block">
-                      <p>Lorem ipsum dolor sit amet...</p>
+                    <div class="block px-0 mt-0">
+                        <ul class="list simple-list">
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="far fa-calendar-alt text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">17 January 2003</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Tanggal Lahir</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="far fa-id-badge text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">124SFWT</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">ID Karyawan</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="fas fa-paperclip text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">Pencobaan</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Status</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="far fa-star text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">3D</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Kelas</h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                   </div>
                   <div class="tab" id="tab2">
-                    <div class="block">
-                      <p>Donec iaculis posuere massa sed dignissim...</p>
+                    <div class="block px-0 mt-0">
+                        <ul class="list simple-list">
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="far fa-envelope text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">deniyudi2@gmail.com</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Kantor</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="far fa-envelope text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">deniyudi2@gmail.com</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Personal</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="fas fa-mobile-alt text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">081459131564</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Telephone</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="fas fa-house-user text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">Jalan Ikan Gurami No.29 TunjungSekar</h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                   </div>
                   <div class="tab" id="tab3">
-                    <div class="block">
-                      <p>Etiam non interdum erat. Curabitur erat lacus...</p>
+                    <div class="block px-0 mt-0">
+                        <ul class="list simple-list">
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="far fa-star text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">Karyawan</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Jabatan</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="fas fa-graduation-cap text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">Programmer</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Pekerjaan</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="fas fa-globe-americas text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">IT</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Departemen</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="fas fa-globe-americas text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">Progrestech</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Divisi</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="far fa-calendar-alt text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">17 Sep 2020</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Mulai Kerja</h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block mt-0 mb-0">
+                        <div class="row text-align-center">
+                            <div class="col">
+                                <h6 class="mt-0 text-mute">Contract Status</h6>
+                            </div>
+                        </div>
+                        <ul class="list simple-list">
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="far fa-star text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">Percobaam</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Status</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="far fa-calendar-alt text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">23 Jan 2020</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Mulai</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mx-0 width-100 align-items-center">
+                                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                                        <i class="far fa-calendar-alt text-template" style="font-size: 30px;"></i>
+                                    </div>
+                                    <div class="col align-self-center pr-0">
+                                        <h6 class="font-weight-normal mb-1 mt-1">17 Sep 2020</h6>
+                                    </div>
+                                    <div class="col text-align-right align-self-center">
+                                        <h6 class="text-mute mt-1">Selesai</h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                   </div>
                 </div>
               </div>
 
-            <div class="block">
+            <!-- <div class="block">
                 <div class="card bg-template shadow mt-4 h-190">
                     <div class="card-content card-content-padding">
                         <div class="row">
@@ -1550,7 +1984,6 @@
             <div class="block">
                 <div class="row">
                     <div class="col-100 px-1">
-                        <!-- Swiper -->
                         <div class="swiper-container two-slide swiper-init" data-pagination='{"el": ".swiper-pagination"}' data-space-between="0" data-slides-per-view="2">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
@@ -1627,7 +2060,6 @@
             <div class="block">
                 <div class="row ">
                     <div class="col-12 px-0">
-                        <!-- Swiper -->
                         <div class="swiper-container offer-slide swiper-init" data-space-between="0" data-slides-per-view="auto">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
@@ -1824,7 +2256,7 @@
             </div>
             <div class="block">
                 <a href="/profile-edit/" class="button button-raised button-fill button-large button-round color-black"><span>Edit Profile</span></a>
-            </div>
+            </div> -->
         </div>
     </div>
 
