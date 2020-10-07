@@ -66,14 +66,33 @@ var routes = [
   },
 
   {
+    path: '/clockin/',
+    componentUrl: './pages/absen/clockin.html',
+  },
+  {
+    path: '/detailclockin/',
+    url: './pages/absen/detailclockin.html',
+  },
+
+  {
     path: '/tambahijin/',
     componentUrl: './pages/ijin/tambahijin.html',
+  },
+
+  {
+    path: '/detailtolak/',
+    url: './pages/ijin/detailijinditolak.html',
+  },
+  {
+    path: '/detailterima/',
+    url: './pages/ijin/detailijinterima.html',
   },
 
   {
     path: '/detailmenunggu/',
     url: './pages/ijin/detailijinmenunggu.html',
   },
+
 
   // Components
   {
