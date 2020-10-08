@@ -65,6 +65,13 @@ var routes = [
     ',
   },
 
+
+  
+  {
+    path: '/filterhis/',
+    url: './pages/absen/filterhistory.html',
+  },
+
   {
     path: '/clockin/',
     componentUrl: './pages/absen/clockin.html',
