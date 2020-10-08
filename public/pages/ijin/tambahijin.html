@@ -1,5 +1,5 @@
-<template>
-<div class="page page-homepage light" data-name="homepage">
+<!-- <template> -->
+<div class="page light">
     <div class="appbar">
         <div class="appbar-inner">
             <div class="left">
@@ -18,11 +18,11 @@
 
     <div class="block mx-0 mt-2">
         <div class="row">
-            <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
+            <div class="col mb-0" style="border-bottom: 1px solid gray;">
                 <p class=" mb-2 mt-1" style="font-size: 18px;">Alasan Absensi</p>
                 <!-- <p class="text-mute medium text-secondary mt-2" @click="openVerticalButtons">Pilih Alasan</p> -->
-                <div class="item-input-wrap input-dropdown-wrap">
-                    <select name="gender" placeholder="Please choose...">
+                <div class="item-input-wrap" style="font-size: 18px;">
+                    <select name="ijin" placeholder="Please choose...">
                       <option value="Sakit">Sakit</option>
                       <option value="Acara Keluarga">Acara Keluarga</option>
                       <option value="Cuti">Cuti</option>
@@ -32,7 +32,25 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-1 padding-vertical" style="border-bottom: 1px solid gray;">
+        <div class="row mt-0" >
+          <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
+            <p class=" mb-1 mt-1" style="font-size: 16px;">Tanggal Awal</p>
+            <div class="calendar-row">
+                <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
+                <input type="date" class="mb-2 mt-1" value="2020-10-01" placeholder="Pilih Tanggal">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-0" >
+          <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
+            <p class=" mb-1 mt-1 " style="font-size: 16px;">Tanggal Akhir</p>
+            <div class="calendar-row">
+                <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
+                <input type="date" class="mb-2 mt-1" value="2020-10-10" placeholder="Pilih Tanggal">
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row mt-1 padding-vertical" style="border-bottom: 1px solid gray;">
             <div class="col">
                 <p class=" mb-2 mt-1" style="font-size: 18px;">Absensi Dari</p>
                 <input type="date" value="today" placeholder="Pilih Tanggal">
@@ -41,14 +59,14 @@
                 <p class=" mb-2 mt-1" style="font-size: 18px;">Sampai</p>
                 <input type="date" value="today" placeholder="Pilih Tanggal">
             </div>
-        </div>
-        <div class="row mt-1">
+        </div> -->
+        <div class="row mt-0">
             <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
                 <p class=" mb-2 mt-1" style="font-size: 18px;">Masukkan Deskripsi</p>
                 <input type="text" placeholder="Deskripsi">
             </div>
         </div>
-        <div class="row mt-1">
+        <div class="row mt-0">
             <div class="col padding-vertical">
                 <p class=" mb-2 mt-1" style="font-size: 18px;">Lampiran</p>
                 <div class="row">
@@ -61,29 +79,16 @@
         </div>
     </div>
 </div>
-</template>
+<!-- </template> -->
 
-<script>
-    return {
-      methods: {
-        openVerticalButtons: function () {
-          var app = this.$app;
-          app.dialog.create({
-            title: 'Pilih Alasan',
-            buttons: [
-              {
-                text: 'Button 1',
-              },
-              {
-                text: 'Button 2',
-              },
-              {
-                text: 'Button 3',
-              },
-            ],
-            verticalButtons: true,
-          }).open();
-        }
-      }
-    }
-  </script>
+<!-- <script>
+    let today = new Date();
+
+    let month = today.getMonth() + 1;
+    let year = today.getFullYear();
+    let date = today.getDate();
+
+    let current_date = `${year}-${month}-${date}`;
+
+
+</script> -->
