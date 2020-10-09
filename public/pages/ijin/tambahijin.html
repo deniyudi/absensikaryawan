@@ -1,5 +1,5 @@
-<!-- <template> -->
-<div class="page light">
+<template>
+<div class="page light page-content">
     <div class="appbar">
         <div class="appbar-inner">
             <div class="left">
@@ -28,6 +28,7 @@
                       <option value="Cuti">Cuti</option>
                       <option value="Tugas Keluar Kota">Tugas Keluar Kota</option>
                       <option value="Cuti Hamil">Cuti Hamil</option>
+                      <option value="Pulang Kampung">Pulang Kampung</option>
                     </select>
                 </div>
             </div>
@@ -37,7 +38,7 @@
             <p class=" mb-1 mt-1" style="font-size: 16px;">Tanggal Awal</p>
             <div class="calendar-row">
                 <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
-                <input type="date" class="mb-2 mt-1" value="2020-10-01" placeholder="Pilih Tanggal">
+                <input type="date" class="mb-2 mt-1" value="{{tanggal}}" placeholder="Pilih Tanggal">
             </div>
           </div>
         </div>
@@ -46,7 +47,7 @@
             <p class=" mb-1 mt-1 " style="font-size: 16px;">Tanggal Akhir</p>
             <div class="calendar-row">
                 <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
-                <input type="date" class="mb-2 mt-1" value="2020-10-10" placeholder="Pilih Tanggal">
+                <input type="date" class="mb-2 mt-1" value="{{tanggal}}" placeholder="Pilih Tanggal">
             </div>
           </div>
         </div>
@@ -79,16 +80,43 @@
         </div>
     </div>
 </div>
-<!-- </template> -->
+</template>
 
-<!-- <script>
-    let today = new Date();
+<script>
+    return{
+        
+        data:function(){
+            // let today = new Date();
 
-    let month = today.getMonth() + 1;
-    let year = today.getFullYear();
-    let date = today.getDate();
+            // let month = today.getMonth()+1;
+            // let year = today.getFullYear();
+            // let date = String(today.getDate).padStart(2,'0');
 
-    let current_date = `${year}-${month}-${date}`;
+            // let current_date = `${year}-${month}-${date}`;
+
+           
+            var today = new Date();
+            var hari = String(today.getDate()).padStart(2, '0');
+            var bulan = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var tahun = today.getFullYear();
+
+            var current_date = `${tahun}-${bulan}-${hari}`;
+
+            let hours = addZero(today.getHours());
+            let minutes = addZero(today.getMinutes());
+
+            let current_time = `${hours}:${minutes}`;
+            // console.log(current_date, current_time);
 
 
-</script> -->
+            return{
+                tanggal: current_date,
+            }
+
+            function addZero(num){
+                return num < 10 ? `0${num}`:num;
+            }
+
+        }
+    }
+</script>
