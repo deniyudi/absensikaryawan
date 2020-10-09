@@ -1,3 +1,4 @@
+<template>
 <div class="page light page-content" >
     <div class="appbar">
         <div class="appbar-inner">
@@ -19,7 +20,7 @@
                         <div class="calendar-row" style="border-bottom: 1px solid gray;">
                             <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
                             <!-- <p class="mb-2 mt-1 text-mute" style="font-size: 16px; font-weight: 500;">08 Okt 2020</p> -->
-                            <input type="date" class="mb-2 mt-1" value="2020-10-01" placeholder="Pilih Tanggal">
+                            <input type="date" class="mb-2 mt-1" value="{{tanggal}}" placeholder="Pilih Tanggal">
                         </div>
                     </div>
                 </div>
@@ -28,7 +29,7 @@
                         <p class=" mb-1 mt-1 text-mute text-secondary" style="font-size: 16px;">Tanggal Akhir</p>
                         <div class="calendar-row" style="border-bottom: 1px solid gray;">
                             <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
-                            <input type="date" class="mb-2 mt-1" value="2020-10-10" placeholder="Pilih Tanggal">
+                            <input type="date" class="mb-2 mt-1" value="{{tanggal}}" placeholder="Pilih Tanggal">
                         </div>
                     </div>
                 </div>
@@ -56,3 +57,34 @@
           </div>
     </div>
 </div>
+</template>
+<script>
+    return{
+        
+        data:function(){
+            // let today = new Date();
+
+            // let month = today.getMonth()+1;
+            // let year = today.getFullYear();
+            // let date = String(today.getDate).padStart(2,'0');
+
+            // let current_date = `${year}-${month}-${date}`;
+
+           
+            var today = new Date();
+            var hari = String(today.getDate()).padStart(2, '0');
+            var bulan = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var tahun = today.getFullYear();
+
+            var current_date = `${tahun}-${bulan}-${hari}`;
+            // console.log(current_date, current_time);
+
+
+            return{
+                tanggal: current_date,
+            }
+
+
+        }
+    }
+</script>

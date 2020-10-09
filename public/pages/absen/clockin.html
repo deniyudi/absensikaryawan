@@ -1,4 +1,4 @@
-
+<template>
 <div class="page light page-content">
     <div class="appbar bg-template">
         <div class="appbar-inner">
@@ -57,7 +57,7 @@
                         <i class="far fa-clock text-template" style="font-size: 25px;"></i>
                     </div>
                     <div class="col right align-self-center pr-0">
-                        <h6 class="font-weight-normal text-mute mb-1 mt-1" style="font-size: 16px;">14:23</h6>
+                        <h6 class="font-weight-normal text-mute mb-1 mt-1" style="font-size: 16px;">{{jam}}</h6>
                     </div>
                 </div>
             </div>
@@ -80,15 +80,30 @@
         </div>
     </div>
 </div>
-<!-- </template> -->
-<!-- 
+</template>
+
 <script>
-    let today = new Date();
+    return{
+        
+        data:function(){
 
-    let month = today.getMonth() + 1;
-    let year = today.getFullYear();
-    let date = today.getDate();
+            var today = new Date();
 
-    let current_date = `${year}-${month}-${date}`;
-    console.log(current_date);
-</script> -->
+            var hours = addZero(today.getHours());
+            var minutes = addZero(today.getMinutes());
+
+            var current_time = `${hours}:${minutes}`;
+            console.log( current_time);
+
+
+            return{
+                jam: current_time,
+            }
+
+            function addZero(num){
+                return num < 10 ? `0${num}`:num;
+            }
+
+        }
+    }
+</script>
