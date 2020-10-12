@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
 <div class="page light page-content">
         <div class="appbar bg-template">
@@ -112,3 +113,119 @@
     },
   }
 </script>
+=======
+<template>
+<div class="page light page-content">
+        <div class="appbar bg-template">
+            <div class="appbar-inner">
+                <div class="left">
+                    <a href="" class="link back icon-only">
+                        <i class="material-icons" style="color: #fff;font-size: 30px;">keyboard_arrow_left</i>
+                        <span class="mx-2" style="color: #fff;font-size: 18px;">Check In</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="block mt-0 mb-0 text-align-center" style="height: 140px;">
+            <div class="row no-gap" style="height: 100%;">
+                <div class="col-66 demo-map-container" id="googleMap" style="height: 100%;"></div>
+                <div class="col-33" style="background-image: url('../../img/user2.png');height: 100%;background-size: cover;">
+                    <!-- <img src="img/user2.png" alt=""> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="block mx-4 mt-0">
+            <div class="row mt-1">
+                <div class="col padding-vertical" style="border-bottom: 1px solid gray; padding-left: 0;">
+                    <p class=" mb-1 mt-1 text-mute" style="font-size: 16px;">Nama jam kerja</p>
+                    <p class=" mb-0 mt-1" style="font-size: 18px; font-weight: 500;">Kerjaan</p>
+                </div>
+            </div>
+            <div class="row mt-0">
+                <div class="col padding-vertical" style="border-bottom: 1px solid gray; padding-left: 0;">
+                    <p class=" mb-1 mt-1 text-mute" style="font-size: 16px;">Tanggal</p>
+                    <p class=" mb-0 mt-1" style="font-size: 18px; font-weight: 500;">Kam, 04 Okt 2020</p>
+                </div>
+            </div>
+            <div class="row mt-0">
+                <div class="col padding-vertical" style="border-bottom: 1px solid gray; padding-left: 0;">
+                    <p class=" mb-1 mt-1 text-mute" style="font-size: 16px;">Waktu Clock In</p>
+                    <p class=" mb-0 mt-1" style="font-size: 18px; font-weight: 500;">08:30</p>
+                </div>
+            </div>
+            <div class="row mt-0">
+                <div class="col padding-vertical" style="border-bottom: 1px solid gray; padding-left: 0;">
+                    <p class=" mb-1 mt-1 text-mute" style="font-size: 16px;">Lokasi</p>
+                    <p class=" mb-0 mt-1" style="font-size: 18px; font-weight: 500;">Jalan Loncat Indah No.4-20, Tasikmadu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65143, Indonesia</p>
+                </div>
+            </div>
+            <div class="row mt-0">
+                <div class="col padding-vertical" style="border-bottom: 1px solid gray; padding-left: 0;">
+                    <p class=" mb-1 mt-1 text-mute" style="font-size: 16px;">Catatan</p>
+                    <p class=" mb-0 mt-1" style="font-size: 18px; font-weight: 500;">-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>//qweq
+    return {
+    data() {
+      return {
+        mapStyleLoaded: false,
+        mapScriptLoaded: false,
+        mapInitialized: false,
+      }
+    },
+    methods: {
+
+      loadMapAssets: function () {
+        var self = this;
+        var style = document.createElement('link');
+        style.rel = 'stylesheet';
+        style.href = 'https://unpkg.com/leaflet@1.4.0/dist/leaflet.css';
+        style.integrity='sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==';
+        style.setAttribute('crossorigin', '')
+        style.onload = function () {
+          self.mapStyleLoaded = true;
+          if (self.mapScriptLoaded) self.initMap();
+        }
+        document.head.appendChild(style);
+
+        var script = document.createElement('script');
+        script.src = 'https://unpkg.com/leaflet@1.4.0/dist/leaflet.js';
+        script.integrity='sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==';
+        script.setAttribute('crossorigin', '')
+        script.onload = function () {
+          self.mapScriptLoaded = true;
+          if (self.mapStyleLoaded) self.initMap();
+        }
+        document.head.appendChild(script);
+      },
+      initMap: function () {
+        var self = this;
+        var mymap = L.map(self.$el.find('.demo-map-container')[0], { zoomControl: false, }).setView([-7.920969, 112.6191526], 14);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm9saW1pdHM0d2ViIiwiYSI6ImNqcXA4NTdmczBocm8zeG13Zm1zNTdyeDAifQ.HoJgmqQ_uH4zLyNJmiY98A', {
+          maxZoom: 16,
+          id: 'mapbox.streets'
+        }).addTo(mymap);
+        self.mapInitialized = true;
+      },
+    },
+    on: {
+      pageAfterIn: function () {
+        var self = this;
+        if (self.mapInitialized) return;
+        if (!window.L) {
+          self.loadMapAssets();
+          return;
+        }
+        self.initMap();
+      },
+    },
+  }
+</script>
+>>>>>>> 98120d9b513fc21ce32b39e0429ad66d84ba9c6f
