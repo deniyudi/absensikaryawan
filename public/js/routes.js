@@ -83,11 +83,14 @@ var routes = [
   },
 
   {
+<<<<<<< HEAD
     path: '/cam/',
     componentUrl: './pages/absen/camera.html',
   },
 
   {
+=======
+>>>>>>> 98120d9b513fc21ce32b39e0429ad66d84ba9c6f
     path: '/filterhis/',
     componentUrl: './pages/absen/filterhistory.html',
   },
