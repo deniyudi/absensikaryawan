@@ -1,0 +1,30 @@
+<template>
+    <div class="page">
+        <div class="appbar bg-template">
+            <div class="appbar-inner">
+                <div class="left">
+                    <a href="" class="link back icon-only">
+                        <i class="material-icons" style="color: #fff;font-size: 30px;">keyboard_arrow_left</i>
+                        <span class="mx-2" style="color: #fff;font-size: 18px;">Check Out</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+            <video autoplay="true" id="video" width="100%"></video>
+    </div>
+    </template>
+    <script>
+        return{
+            
+           on:{
+               pageInit: async function getWebCam(){
+                try{
+                    const videoSrc=await navigator.mediaDevices.getUserMedia({video:true});
+                    var video=document.getElementById("video");
+                    video.srcObject=videoSrc;
+                }catch(e){
+                    console.log(e);
+                }}
+           }
+        }
+    </script>

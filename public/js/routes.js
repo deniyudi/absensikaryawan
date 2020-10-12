@@ -66,19 +66,30 @@ var routes = [
   },
 
 
-  
-  {
-    path: '/filterhis/',
-    url: './pages/absen/filterhistory.html',
-  },
 
   {
     path: '/clockin/',
     componentUrl: './pages/absen/clockin.html',
   },
+
+  {
+    path: '/clockout/',
+    componentUrl: './pages/absen/clockout.html',
+  },
+
   {
     path: '/detailclockin/',
-    url: './pages/absen/detailclockin.html',
+    componentUrl: './pages/absen/detailclockin.html',
+  },
+
+  {
+    path: '/cam/',
+    componentUrl: './pages/absen/camera.html',
+  },
+
+  {
+    path: '/filterhis/',
+    componentUrl: './pages/absen/filterhistory.html',
   },
 
   {
@@ -139,7 +150,7 @@ var routes = [
   // home page
   {
     path: '/homepage/',
-    url: './pages/home.html',
+    componentUrl: './pages/home.html',
   },
   // thankyou page
   {

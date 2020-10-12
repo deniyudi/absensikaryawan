@@ -1,4 +1,4 @@
-
+<template>
 <div class="page light page-content">
     <div class="appbar bg-template">
         <div class="appbar-inner">
@@ -11,15 +11,19 @@
         </div>
     </div>
 
+    <!-- <video id="video" width="100%" height="200" autoplay></video> -->
+
     <div class="block mt-0 mb-0 text-align-center" style="height: 370px;">
-        <div class="row" style="height: 100%;">
-            <div class="col text-align-center align-self-center">
-                <div class="container ml-3 mr-3" style="border-radius: 10%; border: 2px solid gray; padding: 40px;">
-                    <i class="fas fa-camera text-mute text-secondary" style="font-size: 150px; color: gray;"></i>
+        <a href="/cam/">
+            <div class="row" style="height: 100%;">
+                <div class="col text-align-center align-self-center">
+                        <div class="container ml-3 mr-3" style="border-radius: 10%; border: 2px solid gray; padding: 40px;">
+                            <i class="fas fa-camera text-mute text-secondary" style="font-size: 150px; color: gray;"></i>
+                        </div>
+                    <h4 class="mt-5 text-mute pt-4" style="color: gray;">Take Your Selfie</h4>
                 </div>
-                <h4 class="mt-5 text-mute pt-4" style="color: gray;">Take Your Selfie</h4>
             </div>
-        </div>
+        </a>
     </div>
 
     <div class="block mt-0">
@@ -57,7 +61,7 @@
                         <i class="far fa-clock text-template" style="font-size: 25px;"></i>
                     </div>
                     <div class="col right align-self-center pr-0">
-                        <h6 class="font-weight-normal text-mute mb-1 mt-1" style="font-size: 16px;">14:23</h6>
+                        <h6 class="font-weight-normal text-mute mb-1 mt-1" id="jam" style="font-size: 16px;"></h6>
                     </div>
                 </div>
             </div>
@@ -80,15 +84,28 @@
         </div>
     </div>
 </div>
-<!-- </template> -->
-<!-- 
+</template>
+
 <script>
-    let today = new Date();
+    return{
 
-    let month = today.getMonth() + 1;
-    let year = today.getFullYear();
-    let date = today.getDate();
+        on: {
+            pageInit:function startTime(){
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                // var s = today.getSeconds();
+                m = checkTime(m);
+                // s = checkTime(s);
 
-    let current_date = `${year}-${month}-${date}`;
-    console.log(current_date);
-</script> -->
+                document.getElementById('jam').innerHTML = h + " "+ ":" + " "+ m 
+                var t = setTimeout(startTime, 500);
+
+                function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+            }
+        }
+    }
+</script>

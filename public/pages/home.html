@@ -1,5 +1,5 @@
+<template>
 <div class="page page-homepage light" data-name="homepage">
-    
     <div class="toolbar tabbar toolbar-bottom o-visible">
         <div class="toolbar-inner o-visible tabs-max-width">
             <a href="#tab-1" class="tab-link tab-link-active"><i class="material-icons">home</i></a>
@@ -11,6 +11,18 @@
     </div>
 
     <div class="tabs">
+        <div class="popover popover-menu popover-on-right" style="width: auto">
+            <div class="popover-angle"></div>
+                <div class="popover-inner">
+                    <div class="list">
+                        <ul>
+                            <li><a href="#" class="list-button popover-close text-color-black px-2"><i class="fas fa-question-circle text-color-gray" style="font-size: large; padding-right: 10px;"></i><span class="text-color-gray">Bantuan</span></a></li>
+                            <li><a href="" class="list-button popover-close text-color-black px-2"><i class="fas fa-exclamation-circle text-color-gray" style="font-size: large; padding-right: 10px;"></i><span class="text-color-gray">Tentang Aplikasi</span></a></li>
+                            <li><a href="" class="list-button popover-close text-color-black px-2"><i class="fas fa-sign-out-alt text-color-red" style="font-size: large; padding-right: 10px;"></i><span class="text-color-red">Sign Out</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
         <div id="tab-1" class="page-content tab tab-active">
             <div class="appbar">
                 <div class="appbar-inner">
@@ -25,8 +37,8 @@
                    </div>
                    <div class="title"><h5 class="page-subtitle mb-4">LinkTeam</h5></div>
                    <div class="right">
-                       <a href="#" class="link icon-only">
-                           <i class="material-icons">settings</i>
+                       <a href="#" class="link icon-only ">
+                           <i class="material-icons popover-open" data-popover=".popover-menu" >settings</i>
                        </a>
                    </div>
                 </div>
@@ -34,9 +46,9 @@
             <div class="block bg-template h-250 mt-0 mb-0">
                 <div class="row text-align-center">
                     <div class="col">
-                        <h5>Kamis</h5>
-                        <p class="mt-4 mb-0" style="font-size: 48px;">09 : 42</p>
-                        <h6 class="mt-5 text-mute">4 Okt 2020</h6>
+                        <h5>{{hari}}</h5>
+                        <p class="mt-4 mb-0" id="txt" style="font-size: 48px;"></p>
+                        <h6 class="mt-5 text-mute">{{tanggal}}</h6>
                     </div>
                 </div>
 
@@ -90,7 +102,7 @@
                         </a>
                     </div>
                     <div class="col resizable" style="min-width: 50px">
-                        <a href="/photo/">
+                        <a href="/cam/">
                             <span>
                                 <div class="card shadow border-0">
                                     <div class="card-content card-content-padding">
@@ -98,7 +110,7 @@
                                     </div>
                                 </div>
                                 <p class="text-secondary mt-1 text-mute small mt-3">Break Out</p>
-                              </span>
+                            </span>
                         </a>
                       </div>
                     <div class="col resizable resizable-fixed" style="min-width: 50px">
@@ -115,14 +127,16 @@
                 <br>
                 <div class="row text-align-center">
                     <div class="col resizable" style="min-width: 30px">
-                        <span>
-                            <div class="card shadow border-0">
-                                <div class="card-content card-content-padding">
-                                    <i class="material-icons text-template" style="font-size: 50px;" aria-hidden="true">timer_off</i>
+                        <a href="/clockout/">
+                            <span>
+                                <div class="card shadow border-0">
+                                    <div class="card-content card-content-padding">
+                                        <i class="material-icons text-template" style="font-size: 50px;" aria-hidden="true">timer_off</i>
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="text-secondary mt-1 text-mute small mt-3">Check Out</p>
-                          </span>
+                                <p class="text-secondary mt-1 text-mute small mt-3">Check Out</p>
+                              </span>
+                        </a>
                     </div>
                     <div class="col resizable" style="min-width: 30px">
                         <span>
@@ -772,6 +786,67 @@
               </div>
         </div>
     </div>
-
-
 </div>
+</template>
+<script>
+    return{
+
+
+        data:function(){
+
+            var today = new Date();
+            
+            var hari = String(today.getDate()).padStart(2, '0');
+            var tahun = today.getFullYear();
+
+            //hari
+            var day = today.getDay();
+            var daylist = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+            var daynow = daylist[day];
+            //bulan
+            var month = today.getMonth();
+            var mlist = ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"];
+            var mnow = hari+" "+ mlist[month]+" "+tahun;
+
+            return{
+                hari:daynow,
+                tanggal:mnow
+            }
+
+        },
+        on: {
+            pageInit: function startup() {
+             navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+             if (navigator.getUserMedia) {
+                 navigator.getUserMedia({
+                     video: true,
+                     audio:false
+                 },function(stream) {
+                     console.log(stream);
+                 },function(error) {
+                     console.warn(error);
+                 });
+             }
+            },
+
+            
+
+            pageInit:function startTime(){
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                // var s = today.getSeconds();
+                m = checkTime(m);
+                // s = checkTime(s);
+                document.getElementById('txt').innerHTML = h + " "+ ":" + " "+ m 
+                var t = setTimeout(startTime, 500);
+
+                function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+            }
+        }
+    }
+</script>
