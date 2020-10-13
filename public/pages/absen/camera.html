@@ -10,21 +10,49 @@
                 </div>
             </div>
         </div>
-            <video autoplay="true" id="video" width="100%"></video>
+        <div class="block">
+            <div class="row">
+                <div class="col">
+                    <video autoplay="true" id="video" width="500" height="200"></video>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col align-self-center">
+                    <h4 class="capture">test capture</h4>
+                </div>
+            </div>r>
+            <div class="row text-align-center">
+                    <canvas id="canvas" width="300" height="200" style="background-color: gray;" ></canvas>
+            </div>
+            
+        </div>
     </div>
     </template>
-    <script>//we
+    <script>
+
         return{
-            
-           on:{
-               pageInit: async function getWebCam(){
-                try{
-                    const videoSrc=await navigator.mediaDevices.getUserMedia({video:true});
-                    var video=document.getElementById("video");
-                    video.srcObject=videoSrc;
-                }catch(e){
-                    console.log(e);
-                }}
+            on:{
+                pageInit: async function(){
+                    var self = this;
+                    var app = self.$app;
+                    var $ = self.$;
+                    
+                    var capture=document.getElementById("capture");
+                    var canvas=document.getElementById("canvas");
+                    var context=canvas.getContext('2d');
+
+                    $('.capture').on('click',function(){
+                        context.drawImage(video,0,0,300,200);
+                    })
+
+                    try{
+                        const videoSrc=await navigator.mediaDevices.getUserMedia({video:true});
+                        var video=document.getElementById("video");
+                        video.srcObject=videoSrc;
+                    }catch(e){
+                        console.log(e);
+                    }},
            }
+           
         }
     </script>

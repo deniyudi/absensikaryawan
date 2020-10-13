@@ -11,14 +11,17 @@
     </div>
 
     <div class="tabs">
-        <div class="popover popover-menu popover-on-right" style="width: auto">
+        <div class="popover popover-menu popover-on-right" style="width: 230px">
             <div class="popover-angle"></div>
                 <div class="popover-inner">
+                    <h5 class="ml-3 mt-2">Pengaturan</h5>
                     <div class="list">
                         <ul>
+                            <li><a href="/perusahaan/" class="list-button popover-close text-color-black px-2"><i class="fas fa-building text-color-gray" style="font-size: large; padding-right: 10px;"></i><span class="text-color-gray">Profil Perusahaan</span></a></li>
                             <li><a href="#" class="list-button popover-close text-color-black px-2"><i class="fas fa-question-circle text-color-gray" style="font-size: large; padding-right: 10px;"></i><span class="text-color-gray">Bantuan</span></a></li>
-                            <li><a href="" class="list-button popover-close text-color-black px-2"><i class="fas fa-exclamation-circle text-color-gray" style="font-size: large; padding-right: 10px;"></i><span class="text-color-gray">Tentang Aplikasi</span></a></li>
-                            <li><a href="" class="list-button popover-close text-color-black px-2"><i class="fas fa-sign-out-alt text-color-red" style="font-size: large; padding-right: 10px;"></i><span class="text-color-red">Sign Out</span></a></li>
+                            <li><a href="/ttgapk/" class="list-button popover-close text-color-black px-2"><i class="fas fa-exclamation-circle text-color-gray" style="font-size: large; padding-right: 10px;"></i><span class="text-color-gray">Tentang Aplikasi</span></a></li>
+                            <li><a href="" class="list-button popover-close text-color-black px-2"><i class="fas fa-lock text-color-gray" style="font-size: large; padding-right: 10px;"></i><span class="text-color-gray">Ubah Password</span></a></li>
+                            <li><a href="" class="list-button popover-close text-color-black px-2"><i class="fas fa-sign-out-alt text-color-red" style="font-size: large; padding-right: 10px;"></i><span class="text-color-red">Keluar</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -37,8 +40,8 @@
                    </div>
                    <div class="title"><h5 class="page-subtitle mb-4">LinkTeam</h5></div>
                    <div class="right">
-                       <a href="#" class="link icon-only ">
-                           <i class="material-icons popover-open" data-popover=".popover-menu" >settings</i>
+                       <a href="#" class="link icon-only">
+                           <i class="material-icons popover-open" data-popover=".popover-menu">settings</i>
                        </a>
                    </div>
                 </div>
@@ -815,26 +818,26 @@
 
         },
         on: {
-            pageInit: function startup() {
-             navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+            // pageInit: function startup() {
+            //  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
-             if (navigator.getUserMedia) {
-                 navigator.getUserMedia({
-                     video: true,
-                     audio:false
-                 },function(stream) {
-                     console.log(stream);
-                 },function(error) {
-                     console.warn(error);
-                 });
-             }
-            },
+            //  if (navigator.getUserMedia) {
+            //      navigator.getUserMedia({
+            //          video: true,
+            //          audio:false
+            //      },function(stream) {
+            //          console.log(stream);
+            //      },function(error) {
+            //          console.warn(error);
+            //      });
+            //  }
+            // },
 
             
 
             pageInit:function startTime(){
                 var today = new Date();
-                var h = today.getHours();
+                var h = String(today.getHours()).padStart(2, '0');
                 var m = today.getMinutes();
                 // var s = today.getSeconds();
                 m = checkTime(m);

@@ -64,8 +64,21 @@ var routes = [
       </div>\
     ',
   },
+  
+  {
+    path: '/perusahaan/',
+    componentUrl: './pages/profilperusahaan.html',
+  },
 
+  {
+    path: '/pengaturan/',
+    componentUrl: './pages/pengaturan.html',
+  },
 
+  {
+    path: '/ttgapk/',
+    componentUrl: './pages/tentangaplikasi.html',
+  },
 
   {
     path: '/clockin/',
@@ -83,7 +96,6 @@ var routes = [
   },
 
   {
-
     path: '/cam/',
     componentUrl: './pages/absen/camera.html',
   },

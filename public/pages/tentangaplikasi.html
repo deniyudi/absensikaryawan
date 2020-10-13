@@ -1,0 +1,88 @@
+<template>
+    <div class="page light page-content">
+        <div class="appbar">
+            <div class="appbar-inner">
+                <div class="left">
+                    <a href="" class="link back icon-only">
+                        <i class="material-icons" style="color: black;font-size: 30px;">keyboard_arrow_left</i>
+                        <span class="" style="color: black;font-size: 18px;"><b>Tentang Aplikasi</b></span>
+                    </a>
+                </div>
+                <div class="right">
+                    <!-- <a href="#" class="link icon-only">
+                     <button class="col button button-raised button-fill bg-template" style="text-transform: capitalize; ">Simpan</button>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    
+        <div class="page-content">
+            <div class="block no-margin-vertical">
+                <div class="row text-align-center margin-top" >
+                    <div class="col">
+                        <img src="img/facebook.png" class="" style="width: 100px; height: 100px;" alt="">
+                    </div>
+
+                </div>
+                <div class="row text-align-center">
+                    <div class="col align-self-center">
+                        <p class="" style="font-weight: bold;">LinkTeam</p>
+                        <p class="no-margin-bottom">Versi 1.0.1</p>
+                        <p class="no-margin-vertical padding-vertical-half"><i class="fas fa-copyright" style="font-size: 14px; padding-right: 5px;"></i>2016 - 2019 LinkTeam </p>
+                        <a href="">www.google.com</a>
+                    </div>
+
+                </div>
+                <hr style="color: gray;">
+                <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
+                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                        <i class="fas fa-star text-template" style="font-size: 20px;"></i>
+                    </div>
+                    <div class="col align-self-center pr-0">
+                        <h6 class="font-weight-bold mb-1 mt-1"  style="font-size: 16px;">Nilai kami di play store </h6>
+                    </div>
+                </div>
+                <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
+                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                        <i class="fas fa-question-circle text-template" style="font-size: 20px;"></i>
+                    </div>
+                    <div class="col align-self-center pr-0">
+                        <h6 class="font-weight-bold mb-1 mt-1"  style="font-size: 16px;">FAQ</h6>
+                    </div>
+                </div>
+                <div class="row ml-1 width-100 align-items-center mt-1 mb-2" onclick="window.open('mailto:deniyudi2@gmail.com')" >
+                    <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                        <i class="fas fa-comment-alt text-template" style="font-size: 20px;"></i>
+                    </div>
+                    <div class="col align-self-center pr-0">
+                        <h6 class="font-weight-bold mb-1 mt-1"  style="font-size: 16px;">Laporan atau masukkan</h6>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </template>
+    
+    <script>
+        return {
+          methods: {
+            openVerticalButtons: function () {
+              var app = this.$app;
+              app.dialog.create({
+                title: 'Pilih Alasan',
+                buttons: [
+                  {
+                    text: 'Button 1',
+                  },
+                  {
+                    text: 'Button 2',
+                  },
+                  {
+                    text: 'Button 3',
+                  },
+                ],
+                verticalButtons: true,
+              }).open();
+            }
+          }
+        }
+      </script>

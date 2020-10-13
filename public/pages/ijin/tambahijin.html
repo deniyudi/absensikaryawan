@@ -1,238 +1,115 @@
-<<<<<<< HEAD
 <template>
-<div class="page light page-content">
-    <div class="appbar">
-        <div class="appbar-inner">
-            <div class="left">
-                <a href="" class="link back icon-only">
-                    <i class="material-icons" style="color: black;font-size: 30px;">keyboard_arrow_left</i>
-                    <span class="" style="color: black;font-size: 18px;">Permintaan Absensi</span>
-                </a>
+    <div class="page light page-content">
+        <div class="appbar">
+            <div class="appbar-inner">
+                <div class="left">
+                    <a href="" class="link back icon-only">
+                        <i class="material-icons" style="color: black;font-size: 30px;">keyboard_arrow_left</i>
+                        <span class="" style="color: black;font-size: 18px;">Permintaan Absensi</span>
+                    </a>
+                </div>
+               <div class="right">
+                   <a href="#" class="link icon-only">
+                    <button class="col button button-outline" style="text-transform: capitalize;">Kirim</button>
+                   </a>
+               </div>
             </div>
-           <div class="right">
-               <a href="#" class="link icon-only">
-                <button class="col button button-outline" style="text-transform: capitalize;">Kirim</button>
-               </a>
-           </div>
         </div>
-    </div>
-
-    <div class="block mx-0 mt-2">
-        <div class="row">
-            <div class="col mb-0" style="border-bottom: 1px solid gray;">
-                <p class=" mb-2 mt-1" style="font-size: 18px;">Alasan Absensi</p>
-                <!-- <p class="text-mute medium text-secondary mt-2" @click="openVerticalButtons">Pilih Alasan</p> -->
-                <div class="item-input-wrap" style="font-size: 18px;">
-                    <select name="ijin" placeholder="Please choose...">
-                      <option value="Sakit">Sakit</option>
-                      <option value="Acara Keluarga">Acara Keluarga</option>
-                      <option value="Cuti">Cuti</option>
-                      <option value="Tugas Keluar Kota">Tugas Keluar Kota</option>
-                      <option value="Cuti Hamil">Cuti Hamil</option>
-                      <option value="Pulang Kampung">Pulang Kampung</option>
-                    </select>
+    
+        <div class="block mx-0 mt-2">
+            <div class="row">
+                <div class="col mb-0" style="border-bottom: 1px solid gray;">
+                    <p class=" mb-2 mt-1" style="font-size: 18px;">Alasan Absensi</p>
+                    <!-- <p class="text-mute medium text-secondary mt-2" @click="openVerticalButtons">Pilih Alasan</p> -->
+                    <div class="item-input-wrap" style="font-size: 18px;color: gray;">
+                        <select name="ijin" placeholder="Please choose...">
+                          <option value="Pilih Alasan">Pilih Alasan</option>
+                          <option value="Sakit">Sakit</option>
+                          <option value="Acara Keluarga">Acara Keluarga</option>
+                          <option value="Cuti">Cuti</option>
+                          <option value="Tugas Keluar Kota">Tugas Keluar Kota</option>
+                          <option value="Cuti Hamil">Cuti Hamil</option>
+                          <option value="Pulang Kampung">Pulang Kampung</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row mt-0" >
-          <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
-            <p class=" mb-1 mt-1" style="font-size: 16px;">Tanggal Awal</p>
-            <div class="calendar-row">
-                <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
-                <input type="date" class="mb-2 mt-1" value="{{tanggal}}" placeholder="Pilih Tanggal">
+            <div class="row mt-0" >
+              <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
+                <p class=" mb-1 mt-1" style="font-size: 16px;">Tanggal Awal</p>
+                <div class="calendar-row">
+                    <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
+                    <input type="date" class="mb-2 mt-1" value="{{tanggal}}" placeholder="Pilih Tanggal">
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row mt-0" >
-          <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
-            <p class=" mb-1 mt-1 " style="font-size: 16px;">Tanggal Akhir</p>
-            <div class="calendar-row">
-                <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
-                <input type="date" class="mb-2 mt-1" value="{{tanggal}}" placeholder="Pilih Tanggal">
+            <div class="row mt-0" >
+              <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
+                <p class=" mb-1 mt-1 " style="font-size: 16px;">Tanggal Akhir</p>
+                <div class="calendar-row">
+                    <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
+                    <input type="date" class="mb-2 mt-1" value="{{tanggal}}" placeholder="Pilih Tanggal">
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <!-- <div class="row mt-1 padding-vertical" style="border-bottom: 1px solid gray;">
-            <div class="col">
-                <p class=" mb-2 mt-1" style="font-size: 18px;">Absensi Dari</p>
-                <input type="date" value="today" placeholder="Pilih Tanggal">
+            <!-- <div class="row mt-1 padding-vertical" style="border-bottom: 1px solid gray;">
+                <div class="col">
+                    <p class=" mb-2 mt-1" style="font-size: 18px;">Absensi Dari</p>
+                    <input type="date" value="today" placeholder="Pilih Tanggal">
+                </div>
+                <div class="col">
+                    <p class=" mb-2 mt-1" style="font-size: 18px;">Sampai</p>
+                    <input type="date" value="today" placeholder="Pilih Tanggal">
+                </div>
+            </div> -->
+            <div class="row mt-0">
+                <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
+                    <p class=" mb-2 mt-1" style="font-size: 18px;">Masukkan Deskripsi</p>
+                    <input type="text" placeholder="Deskripsi">
+                </div>
             </div>
-            <div class="col">
-                <p class=" mb-2 mt-1" style="font-size: 18px;">Sampai</p>
-                <input type="date" value="today" placeholder="Pilih Tanggal">
-            </div>
-        </div> -->
-        <div class="row mt-0">
-            <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
-                <p class=" mb-2 mt-1" style="font-size: 18px;">Masukkan Deskripsi</p>
-                <input type="text" placeholder="Deskripsi">
-            </div>
-        </div>
-        <div class="row mt-0">
-            <div class="col padding-vertical">
-                <p class=" mb-2 mt-1" style="font-size: 18px;">Lampiran</p>
-                <div class="row">
-                    <div class="col">
-                        <a href="#" class="button button-raised button-large border-color-gray"><i class="fas fa-paperclip text-template" style="font-size: 20px;"></i>
-                            <span class="text-template" style="font-size: 16px;">Lampirkan Gambar atau Photo</span></a>
+            <div class="row mt-0">
+                <div class="col padding-vertical">
+                    <p class=" mb-2 mt-1" style="font-size: 18px;">Lampiran</p>
+                    <div class="row">
+                        <div class="col">
+                            <a href="#" class="button button-raised button-large border-color-gray"><i class="fas fa-paperclip text-template" style="font-size: 20px;"></i>
+                                <span class="text-template" style="font-size: 16px;">Lampirkan Gambar atau Photo</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</template>
-
-<script>
-    return{
-        
-        data:function(){
-            // let today = new Date();
-
-            // let month = today.getMonth()+1;
-            // let year = today.getFullYear();
-            // let date = String(today.getDate).padStart(2,'0');
-
-            // let current_date = `${year}-${month}-${date}`;
-
-           
-            var today = new Date();
-            var hari = String(today.getDate()).padStart(2, '0');
-            var bulan = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            var tahun = today.getFullYear();
-
-            var current_date = `${tahun}-${bulan}-${hari}`;
-
-            console.log(current_date);
-
-
-            return{
-                tanggal: current_date,
+    </template>
+    
+    <script>
+        return{
+            
+            data:function(){
+                // let today = new Date();
+    
+                // let month = today.getMonth()+1;
+                // let year = today.getFullYear();
+                // let date = String(today.getDate).padStart(2,'0');
+    
+                // let current_date = `${year}-${month}-${date}`;
+    
+               
+                var today = new Date();
+                var hari = String(today.getDate()).padStart(2, '0');
+                var bulan = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                var tahun = today.getFullYear();
+    
+                var current_date = `${tahun}-${bulan}-${hari}`;
+    
+                console.log(current_date);
+    
+    
+                return{
+                    tanggal: current_date,
+                }
+    
             }
-
         }
-    }
-=======
-<template>
-<div class="page light page-content">
-    <div class="appbar">
-        <div class="appbar-inner">
-            <div class="left">
-                <a href="" class="link back icon-only">
-                    <i class="material-icons" style="color: black;font-size: 30px;">keyboard_arrow_left</i>
-                    <span class="" style="color: black;font-size: 18px;">Permintaan Absensi</span>
-                </a>
-            </div>
-           <div class="right">
-               <a href="#" class="link icon-only">
-                <button class="col button button-outline" style="text-transform: capitalize;">Kirim</button>
-               </a>
-           </div>
-        </div>
-    </div>
-
-    <div class="block mx-0 mt-2">
-        <div class="row">
-            <div class="col mb-0" style="border-bottom: 1px solid gray;">
-                <p class=" mb-2 mt-1" style="font-size: 18px;">Alasan Absensi</p>
-                <!-- <p class="text-mute medium text-secondary mt-2" @click="openVerticalButtons">Pilih Alasan</p> -->
-                <div class="item-input-wrap" style="font-size: 18px;">
-                    <select name="ijin" placeholder="Please choose...">
-                      <option value="Sakit">Sakit</option>
-                      <option value="Acara Keluarga">Acara Keluarga</option>
-                      <option value="Cuti">Cuti</option>
-                      <option value="Tugas Keluar Kota">Tugas Keluar Kota</option>
-                      <option value="Cuti Hamil">Cuti Hamil</option>
-                      <option value="Pulang Kampung">Pulang Kampung</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-0" >
-          <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
-            <p class=" mb-1 mt-1" style="font-size: 16px;">Tanggal Awal</p>
-            <div class="calendar-row">
-                <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
-                <input type="date" class="mb-2 mt-1" value="{{tanggal}}" placeholder="Pilih Tanggal">
-            </div>
-          </div>
-        </div>
-        <div class="row mt-0" >
-          <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
-            <p class=" mb-1 mt-1 " style="font-size: 16px;">Tanggal Akhir</p>
-            <div class="calendar-row">
-                <i class="far fa-calendar mt-1 text-template" style="width: 40px; font-size: 24px;"></i>
-                <input type="date" class="mb-2 mt-1" value="{{tanggal}}" placeholder="Pilih Tanggal">
-            </div>
-          </div>
-        </div>
-        <!-- <div class="row mt-1 padding-vertical" style="border-bottom: 1px solid gray;">
-            <div class="col">
-                <p class=" mb-2 mt-1" style="font-size: 18px;">Absensi Dari</p>
-                <input type="date" value="today" placeholder="Pilih Tanggal">
-            </div>
-            <div class="col">
-                <p class=" mb-2 mt-1" style="font-size: 18px;">Sampai</p>
-                <input type="date" value="today" placeholder="Pilih Tanggal">
-            </div>
-        </div> -->
-        <div class="row mt-0">
-            <div class="col padding-vertical" style="border-bottom: 1px solid gray;">
-                <p class=" mb-2 mt-1" style="font-size: 18px;">Masukkan Deskripsi</p>
-                <input type="text" placeholder="Deskripsi">
-            </div>
-        </div>
-        <div class="row mt-0">
-            <div class="col padding-vertical">
-                <p class=" mb-2 mt-1" style="font-size: 18px;">Lampiran</p>
-                <div class="row">
-                    <div class="col">
-                        <a href="#" class="button button-raised button-large border-color-gray"><i class="fas fa-paperclip text-template" style="font-size: 20px;"></i>
-                            <span class="text-template" style="font-size: 16px;">Lampirkan Gambar atau Photo</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</template>
-
-<script>
-    return{
-        
-        data:function(){
-            // let today = new Date();
-
-            // let month = today.getMonth()+1;
-            // let year = today.getFullYear();
-            // let date = String(today.getDate).padStart(2,'0');
-
-            // let current_date = `${year}-${month}-${date}`;
-
-           
-            var today = new Date();
-            var hari = String(today.getDate()).padStart(2, '0');
-            var bulan = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            var tahun = today.getFullYear();
-
-            var current_date = `${tahun}-${bulan}-${hari}`;
-
-            let hours = addZero(today.getHours());
-            let minutes = addZero(today.getMinutes());
-
-            let current_time = `${hours}:${minutes}`;
-            // console.log(current_date, current_time);
-
-
-            return{
-                tanggal: current_date,
-            }
-
-            function addZero(num){
-                return num < 10 ? `0${num}`:num;
-            }
-
-        }
-    }
->>>>>>> 98120d9b513fc21ce32b39e0429ad66d84ba9c6f
-</script>
+    </script>

@@ -1,222 +1,154 @@
-<<<<<<< HEAD
 <template>
-<div class="page light page-content">
-    <div class="appbar bg-template">
-        <div class="appbar-inner">
-            <div class="left">
-                <a href="" class="link back icon-only">
-                    <i class="material-icons" style="color: #fff;font-size: 30px;">keyboard_arrow_left</i>
-                    <span class="mx-2" style="color: #fff;font-size: 18px;">Check In</span>
-                </a>
+    <div class="page light page-content" style="overflow-x: hidden;">
+        <div class="appbar bg-template">
+            <div class="appbar-inner">
+                <div class="left">
+                    <a href="" class="link back icon-only">
+                        <i class="material-icons" style="color: #fff;font-size: 30px;">keyboard_arrow_left</i>
+                        <span class="mx-2" style="color: #fff;font-size: 18px;">Check In</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+    
+        <div class="block mt-0 mb-0 px-0 text-align-center" style="height: 370px;">
+                <div class="row" style="height: 100%;">
+                    <div class="col text-align-center align-self-center">
+                            <div class="container ml-3 mr-3" style="border-radius: 10%; border: 2px solid gray; padding: 40px;" >
+                                <i class="fas fa-camera text-mute text-secondary" id="custom-button-aq" style="font-size: 150px; color: gray;"></i>
+                            </div>
+                            <h4 class="mt-5 text-mute pt-4" style="color: gray;">Take Your Selfie</h4>
+                    </div>
+                    <input type="file" id="real-file-aq" @click="GAMBAR" accept=".jpg,.jpeg,.png" hidden="hidden" />
+                </div>
+        </div>
 
-    <!-- <video id="video" width="100%" height="200" autoplay></video> -->
-
-    <div class="block mt-0 mb-0 text-align-center" style="height: 370px;">
-        <a href="/cam/">
-            <div class="row" style="height: 100%;">
-                <div class="col text-align-center align-self-center">
-                        <div class="container ml-3 mr-3" style="border-radius: 10%; border: 2px solid gray; padding: 40px;">
-                            <i class="fas fa-camera text-mute text-secondary" style="font-size: 150px; color: gray;"></i>
+        <!-- <img src="" alt="" id="img-custom" height="370px"> -->
+    
+        <div class="block mt-0">
+            <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
+                <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                    <i class="fas fa-tasks text-template" style="font-size: 25px;"></i>
+                </div>
+                <div class="col align-self-center pr-0">
+                    <!-- <h6 class="font-weight-bold mb-1 mt-1" @click="openVerticalButtons" style="font-size: 16px;">Kerjaan</h6> -->
+                    <div class="item-input-wrap mt-2" style="font-size: 18px; font-weight: bold;">
+                        <select name="task" placeholder="Please choose...">
+                          <option value="Kerjaan">Kerjaan</option>
+                          <option value="Keluar Kota">Keluar Kota</option>
+                          <option value="Pemasaran">Pemasaran</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
+                <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                    <i class="fas fa-map-marker-alt text-template" style="font-size: 25px;"></i>
+                </div>
+                <div class="col align-self-center" style="width: 100%;">
+                    <div class="item-input-wrap mt-2" style="font-size: 18px; font-weight: bold;">
+                        <select name="task" placeholder="Please choose...">
+                          <option value="MNZ Company">MNZ Company</option>
+                          <option value="PT UBIG">PT UBIG</option>
+                          <option value="Pro Company">Pro Company</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col right text-align-right align-self-center">
+                    <div class="calendar-row text-align-right">
+                        <div class="col mr-3 px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                            <i class="far fa-clock text-template" style="font-size: 25px;"></i>
                         </div>
-                    <h4 class="mt-5 text-mute pt-4" style="color: gray;">Take Your Selfie</h4>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="block mt-0">
-        <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
-            <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
-                <i class="fas fa-tasks text-template" style="font-size: 25px;"></i>
-            </div>
-            <div class="col align-self-center pr-0">
-                <!-- <h6 class="font-weight-bold mb-1 mt-1" @click="openVerticalButtons" style="font-size: 16px;">Kerjaan</h6> -->
-                <div class="item-input-wrap mt-2" style="font-size: 18px; font-weight: bold;">
-                    <select name="task" placeholder="Please choose...">
-                      <option value="Kerjaan">Kerjaan</option>
-                      <option value="Keluar Kota">Keluar Kota</option>
-                      <option value="Pemasaran">Pemasaran</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
-            <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
-                <i class="fas fa-map-marker-alt text-template" style="font-size: 25px;"></i>
-            </div>
-            <div class="col align-self-center" style="width: 100%;">
-                <div class="item-input-wrap mt-2" style="font-size: 18px; font-weight: bold;">
-                    <select name="task" placeholder="Please choose...">
-                      <option value="MNZ Company">MNZ Company</option>
-                      <option value="PT UBIG">PT UBIG</option>
-                      <option value="Pro Company">Pro Company</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col right text-align-right align-self-center">
-                <div class="calendar-row text-align-right">
-                    <div class="col mr-3 px-0 padding-vertical-half text-align-center" style="width: 30px;">
-                        <i class="far fa-clock text-template" style="font-size: 25px;"></i>
+                        <div class="col right align-self-center pr-0">
+                            <h6 class="font-weight-normal text-mute mb-1 mt-1" id="jam" style="font-size: 16px;"></h6>
+                        </div>
                     </div>
-                    <div class="col right align-self-center pr-0">
-                        <h6 class="font-weight-normal text-mute mb-1 mt-1" id="jam" style="font-size: 16px;"></h6>
+                </div>
+            </div>
+            <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
+                <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
+                    <i class="fas fa-quote-right text-template" style="font-size: 20px;"></i>
+                </div>
+                <div class="col align-self-center pr-0">
+                    <div class="item-input-wrap mt-3">
+                        <textarea style="width: 90%; font-size: 16px;" placeholder="Masukkan keterangan (opsional)"></textarea>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
-            <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
-                <i class="fas fa-quote-right text-template" style="font-size: 20px;"></i>
-            </div>
-            <div class="col align-self-center pr-0">
-                <div class="item-input-wrap mt-3">
-                    <textarea style="width: 90%; font-size: 16px;" placeholder="Masukkan keterangan (opsional)"></textarea>
-                </div>
+        <div class="block text-align-center">
+            <div class="avatar avatar-60 text-template no-shadow">
+                <div class="overlay bg-template"></div>
+                <i class="fas fa-fingerprint" style="font-size: 30px;"></i>
             </div>
         </div>
     </div>
-    <div class="block text-align-center">
-        <div class="avatar avatar-60 text-template no-shadow">
-            <div class="overlay bg-template"></div>
-            <i class="fas fa-fingerprint" style="font-size: 30px;"></i>
-        </div>
-    </div>
-</div>
-</template>
+    </template>
+    
+    <script>
+        return{
+            on: {
+                PageInit: function startTime(e, page){
+                    var today = new Date();
+                    var h = String(today.getHours()).padStart(2, '0');
+                    var m = today.getMinutes();
+                    // var s = today.getSeconds();
+                    m = checkTime(m);
+                    // s = checkTime(s);
+    
+                    document.getElementById('jam').innerHTML = h + " "+ ":" + " "+ m 
+                    var t = setTimeout(startTime, 500);
+    
+                    function checkTime(i) {
+                    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                    return i;
+                    }
 
-<script>
-    return{
+                    
+                    const realFileBtn_aq = document.getElementById("real-file-aq");
+                    const customBtn_aq = document.getElementById("custom-button-aq");
+                    const customTxt_aq = document.getElementById("custom-text-aq");
 
-        on: {
-            pageInit:function startTime(){
-                var today = new Date();
-                var h = today.getHours();
-                var m = today.getMinutes();
-                // var s = today.getSeconds();
-                m = checkTime(m);
-                // s = checkTime(s);
+                    customBtn_aq.addEventListener("click", function() {
+                    realFileBtn_aq.click();
+                    });
 
-                document.getElementById('jam').innerHTML = h + " "+ ":" + " "+ m 
-                var t = setTimeout(startTime, 500);
+                    realFileBtn_aq.addEventListener("change", function() {
+                    if (realFileBtn_aq.files[0].type=='image/png') {
+                        customTxt_aq.innerHTML = realFileBtn_aq.value.match(
+                        /[\/\\]([\w\d\s\.\-\(\)]+)$/
+                        )[1];
+                        
+                        document.getElementById('img-output').src = window.URL.createObjectURL(this.files[0]);
+                    } else if (realFileBtn_aq.files[0].type=='image/jpg') {
+                        customTxt_aq.innerHTML = realFileBtn_aq.value.match(
+                        /[\/\\]([\w\d\s\.\-\(\)]+)$/
+                        )[1];
+                        // document.getElementById('img-custom').hidden=true;
+                    } else if (realFileBtn_aq.files[0].type=='image/jpeg') {
+                        customTxt_aq.innerHTML = realFileBtn_aq.value.match(
+                        /[\/\\]([\w\d\s\.\-\(\)]+)$/
+                        )[1];
+                    } else {
+                        customTxt_aq.innerHTML = "Belum ada gambar yang terpilih...";
+                    }
+                    });
+                }
+            },
+            methods: {
+                GAMBAR: function(event) {
+                document.getElementById("real-file-aq").onchange = function () {
+                    var reader = new FileReader();
 
-                function checkTime(i) {
-                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-                return i;
-            }
-            }
+                    reader.onload = function (e) {
+                        // get loaded data and render thumbnail.
+                        document.getElementById("img-custom").src = e.target.result;
+                    };
+
+                    // read the image file as a data URL.
+                    reader.readAsDataURL(this.files[0]);
+                };
+                },
+            },
         }
-    }
-=======
-<template>
-<div class="page light page-content">
-    <div class="appbar bg-template">
-        <div class="appbar-inner">
-            <div class="left">
-                <a href="" class="link back icon-only">
-                    <i class="material-icons" style="color: #fff;font-size: 30px;">keyboard_arrow_left</i>
-                    <span class="mx-2" style="color: #fff;font-size: 18px;">Check In</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="block mt-0 mb-0 text-align-center" style="height: 370px;">
-        <div class="row" style="height: 100%;">
-            <div class="col text-align-center align-self-center">
-                <div class="container ml-3 mr-3" style="border-radius: 10%; border: 2px solid gray; padding: 40px;">
-                    <i class="fas fa-camera text-mute text-secondary" style="font-size: 150px; color: gray;"></i>
-                </div>
-                <h4 class="mt-5 text-mute pt-4" style="color: gray;">Take Your Selfie</h4>
-            </div>
-        </div>
-    </div>
-
-    <div class="block mt-0">
-        <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
-            <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
-                <i class="fas fa-tasks text-template" style="font-size: 25px;"></i>
-            </div>
-            <div class="col align-self-center pr-0">
-                <!-- <h6 class="font-weight-bold mb-1 mt-1" @click="openVerticalButtons" style="font-size: 16px;">Kerjaan</h6> -->
-                <div class="item-input-wrap mt-2" style="font-size: 18px; font-weight: bold;">
-                    <select name="task" placeholder="Please choose...">
-                      <option value="Kerjaan">Kerjaan</option>
-                      <option value="Keluar Kota">Keluar Kota</option>
-                      <option value="Pemasaran">Pemasaran</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
-            <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
-                <i class="fas fa-map-marker-alt text-template" style="font-size: 25px;"></i>
-            </div>
-            <div class="col align-self-center" style="width: 100%;">
-                <div class="item-input-wrap mt-2" style="font-size: 18px; font-weight: bold;">
-                    <select name="task" placeholder="Please choose...">
-                      <option value="MNZ Company">MNZ Company</option>
-                      <option value="PT UBIG">PT UBIG</option>
-                      <option value="Pro Company">Pro Company</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col right text-align-right align-self-center">
-                <div class="calendar-row text-align-right">
-                    <div class="col mr-3 px-0 padding-vertical-half text-align-center" style="width: 30px;">
-                        <i class="far fa-clock text-template" style="font-size: 25px;"></i>
-                    </div>
-                    <div class="col right align-self-center pr-0">
-                        <h6 class="font-weight-normal text-mute mb-1 mt-1" style="font-size: 16px;">{{jam}}</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
-            <div class="col-auto px-0 padding-vertical-half text-align-center" style="width: 30px;">
-                <i class="fas fa-quote-right text-template" style="font-size: 20px;"></i>
-            </div>
-            <div class="col align-self-center pr-0">
-                <div class="item-input-wrap mt-3">
-                    <textarea style="width: 90%; font-size: 16px;" placeholder="Masukkan keterangan (opsional)"></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="block text-align-center">
-        <div class="avatar avatar-60 text-template no-shadow">
-            <div class="overlay bg-template"></div>
-            <i class="fas fa-fingerprint" style="font-size: 30px;"></i>
-        </div>
-    </div>
-</div>
-</template>
-
-<script>
-    return{
-        
-        data:function(){
-
-            var today = new Date();
-
-            var hours = addZero(today.getHours());
-            var minutes = addZero(today.getMinutes());
-
-            var current_time = `${hours}:${minutes}`;
-            console.log( current_time);
-
-
-            return{
-                jam: current_time,
-            }
-
-            function addZero(num){
-                return num < 10 ? `0${num}`:num;
-            }
-
-        }
-    }
->>>>>>> 98120d9b513fc21ce32b39e0429ad66d84ba9c6f
-</script>
+    </script>
