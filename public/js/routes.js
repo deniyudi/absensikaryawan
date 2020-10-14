@@ -64,6 +64,11 @@ var routes = [
       </div>\
     ',
   },
+
+  {
+    path: '/coba/',
+    componentUrl: './pages/coba.html',
+  },
   
   {
     path: '/perusahaan/',
