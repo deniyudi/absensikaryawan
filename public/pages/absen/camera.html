@@ -1,24 +1,24 @@
 <template>
     <div class="page">
-        <div class="appbar bg-template">
+        <div class="appbar bg-color-black">
             <div class="appbar-inner">
-                <div class="left">
+                <div class="left"></div>
+                <div class="right">
                     <a href="" class="link back icon-only">
-                        <i class="material-icons" style="color: #fff;font-size: 30px;">keyboard_arrow_left</i>
-                        <span class="mx-2" style="color: #fff;font-size: 18px;">Check Out</span>
+                        <i class="material-icons" style="color: gray;font-size: 30px;">close</i>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="block">
-            <div class="row">
-                <div class="col">
-                    <video autoplay="true" id="video" width="500" height="200"></video>
-                </div>
+        <div class="block h-100 mt-0 mb-0 bg-color-black ">
+            <div class="row width-100 align-content-center text-align-center">
+                    <video autoplay="true" id="video" width="110%" height="440"></video>
             </div>
-            <div class="row">
+            <div class="mt-2 row text-align-center">
                 <div class="col align-self-center">
-                    <h4 class="capture">test capture</h4>
+                    <div class="capture avatar avatar-40">
+                        <button class="bg-color-red avatar avatar-40"></button>
+                    </div>
                 </div>
             </div>
             <div class="row text-align-center">
@@ -28,8 +28,7 @@
         </div>
     </div>
     </template>
-    <script>
-
+    <script src="coba.js">
         return{
             on:{
                 pageInit: async function(){
@@ -47,12 +46,12 @@
 
                     try{
                         const videoSrc=await navigator.mediaDevices.getUserMedia({video:true});
-                        var video=document.getElementById("video");
+                        var video = document.getElementById("video");
                         video.srcObject=videoSrc;
                     }catch(e){
                         console.log(e);
-                    }},
-           }
-           
+                    }
+                },
+            }
         }
     </script>

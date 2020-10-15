@@ -19,11 +19,11 @@
                             </div>
                             <h4 class="mt-5 text-mute pt-4" style="color: gray;">Take Your Selfie</h4>
                     </div>
-                    <input type="file" id="real-file-aq" @click="GAMBAR" accept=".jpg,.jpeg,.png" hidden="hidden" />
+                    <input type="file" id="cameraPick" @click="GAMBAR1" capture="user" accept="image/*" hidden="hidden" />
                 </div>
         </div>
 
-        <!-- <img src="" alt="" id="img-custom" height="370px"> -->
+        
     
         <div class="block mt-0">
             <div class="row ml-1 width-100 align-items-center mt-1 mb-2">
@@ -124,7 +124,7 @@
                         customTxt_aq.innerHTML = realFileBtn_aq.value.match(
                         /[\/\\]([\w\d\s\.\-\(\)]+)$/
                         )[1];
-                        // document.getElementById('img-custom').hidden=true;
+                        // document.getElementById('img-show').hidden=true;
                     } else if (realFileBtn_aq.files[0].type=='image/jpeg') {
                         customTxt_aq.innerHTML = realFileBtn_aq.value.match(
                         /[\/\\]([\w\d\s\.\-\(\)]+)$/
@@ -136,13 +136,13 @@
                 }
             },
             methods: {
-                GAMBAR: function(event) {
-                document.getElementById("real-file-aq").onchange = function () {
+                GAMBAR1: function(event) {
+                document.getElementById("cameraPick").onchange = function () {
                     var reader = new FileReader();
 
                     reader.onload = function (e) {
                         // get loaded data and render thumbnail.
-                        document.getElementById("img-custom").src = e.target.result;
+                        document.getElementById("img-show").src = e.target.result;
                     };
 
                     // read the image file as a data URL.

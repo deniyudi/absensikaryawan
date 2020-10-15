@@ -29,21 +29,21 @@
         <div id="tab-1" class="page-content tab tab-active">
             <div class="appbar">
                 <div class="appbar-inner">
-                   <div class="left">
-                       <!-- <a href="#" class="link icon-only panel-open" data-panel="left">
-                           <span class="new-notification"></span>
-                           <i class="icon material-icons">menu</i>
-                       </a> -->
-                       <a href="#" class="link icon-only panel-open" data-panel="left">
-                        <i class="material-icons">account_circle</i>
-                    </a>
-                   </div>
-                   <div class="title"><h5 class="page-subtitle mb-4">LinkTeam</h5></div>
-                   <div class="right">
-                       <a href="#" class="link icon-only">
-                           <i class="material-icons popover-open" data-popover=".popover-menu">settings</i>
-                       </a>
-                   </div>
+                    <div class="left">
+                        <!-- <a href="#" class="link icon-only panel-open" data-panel="left">
+                            <span class="new-notification"></span>
+                            <i class="icon material-icons">menu</i>
+                        </a> -->
+                        <a href="#" class="link icon-only panel-open" data-panel="left">
+                            <i class="material-icons">account_circle</i>
+                        </a>
+                    </div>
+                    <div class="title"><h5 class="page-subtitle mb-4">LinkTeam</h5></div>
+                    <div class="right">
+                        <a href="#" class="link icon-only">
+                            <i class="material-icons popover-open" data-popover=".popover-menu">settings</i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="block bg-template h-250 mt-0 mb-0">
@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                             <p class="text-secondary mt-1 text-mute small mt-3">Check In</p>
-                          </span>
+                        </span>
                         </a>
                     </div>
                     <div class="col resizable" style="min-width: 50px">
@@ -115,8 +115,9 @@
                                 <p class="text-secondary mt-1 text-mute small mt-3">Break Out</p>
                             </span>
                         </a>
-                      </div>
+                    </div>
                     <div class="col resizable resizable-fixed" style="min-width: 50px">
+                        <a href="/coba/">
                         <span>
                             <div class="card shadow border-0">
                                 <div class="card-content card-content-padding">
@@ -124,7 +125,8 @@
                                 </div>
                             </div>
                             <p class="text-secondary mt-1 text-mute small mt-3">Overtime In</p>
-                          </span>
+                        </span>
+                        </a>
                     </div>
                 </div>
                 <br>
@@ -138,7 +140,7 @@
                                     </div>
                                 </div>
                                 <p class="text-secondary mt-1 text-mute small mt-3">Check Out</p>
-                              </span>
+                            </span>
                         </a>
                     </div>
                     <div class="col resizable" style="min-width: 30px">
@@ -149,9 +151,9 @@
                                 </div>
                             </div>
                             <p class="text-secondary mt-1 text-mute small mt-3">Break In</p>
-                          </span>
-                          
-                      </div>
+                        </span>
+
+                    </div>
                     <div class="col resizable resizable-fixed" style="min-width: 30px">
                         <span>
                             <div class="card shadow border-0">
@@ -344,7 +346,7 @@
 
             <div class="block mx-0">
                 <div class="list">
-                    <ul id="ul-bulananCard">
+                    <ul id="listAbsen">
                       
                     </ul>
                 </div>
@@ -441,7 +443,7 @@
                         <h4>Profile</h4>
                         <div class="avatar avatar-90 no-shadow border-0 mt-2">
                             <img src="img/user2.png" @click="getpick" id="img-custom" alt="">
-                            <input type="file" id="real-file-aq" @click="GAMBAR" accept=".jpg,.jpeg,.png" hidden="hidden"/>
+                            <input type="file" id="real-file-aq" @click="GAMBAR" capture="camera-front" accept="image/*" hidden="hidden"/>
                         </div>
                         <h5 class="mt-3">Deni Yudi Saputra</h5>
                         <h6 class="mt-3 text-mute">Programmer</h6>
@@ -455,11 +457,11 @@
                         <a class="button tab-link text-align-center" href="#tab2">Contacts</a>
                         <a class="button tab-link text-align-center" href="#tab3">Jobs</a>
                     </div>
-                  </div>
+                </div>
             </div>
             <div class="page-content">
                 <div class="tabs">
-                  <div class="tab tab-active" id="tab1">
+                <div class="tab tab-active" id="tab1">
                     <div class="block px-0 mt-0">
                         <ul class="list simple-list">
                             <li>
@@ -690,9 +692,9 @@
                             </li>
                         </ul>
                     </div>
-                  </div>
                 </div>
-              </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -703,92 +705,69 @@
     var year = data.getFullYear();
     var month = data.getMonth();
     var day = data.getDay();
-    var now = new Date();
-    var daysOfYear = [];
-    for (var d = new Date(2020, 9, 1); d <= now; d.setDate(d.getDate() + 1)) {
-        daysOfYear.push(new Date(d));
-    }
-    console.log(daysOfYear);
+
     var monthNames = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus' , 'September' , 'Oktober', 'November', 'Desember'];
     var jadwal=[
         {
         date: new Date(year, month, day),
-        hours: 12,
         tgl: '01',
         bln: 'Okt',
-        minutes: 30,
         title: 'Kerjaan',
         jamkerja:'07:30 - 16:45'
         },
         {
         date: new Date(year, month, day),
-        hours: 12,
         tgl: '02',
         bln: 'Okt',
-        minutes: 30,
         title: 'Kerjaan',
         jamkerja:'07:30 - 16:45'
         },
         {
         date: new Date(year, month, day),
-        hours: 12,
         tgl: '03',
         bln: 'Okt',
-        minutes: 30,
         title: 'Kerjaan',
         jamkerja:'07:30 - 16:45'
         },
         {
         date: new Date(year, month, day),
-        hours: 12,
         tgl: '04',
         bln: 'Okt',
-        minutes: 30,
         title: 'Kerjaan',
         jamkerja:'07:30 - 16:45'
         },
         {
         date: new Date(year, month, day),
-        hours: 12,
         tgl: '05',
         bln: 'Okt',
-        minutes: 30,
         title: 'Kerjaan',
         jamkerja:'07:30 - 16:45'
         },
         {
         date: new Date(year, month, day),
-        hours: 12,
         tgl: '06',
         bln: 'Okt',
-        minutes: 30,
         title: 'Libur',
         jamkerja:''
         },
         {
         date: new Date(year, month-1, day-2),
-        hours: 12,
         tgl: '01',
         bln: 'Sep',
-        minutes: 30,
         title: 'Kerjaan',
         jamkerja:'07:30 - 16:45'
         },
         {
         date: new Date(year, month-1, day-2),
-        hours: 12,
         tgl: '02',
         bln: 'Sep',
-        minutes: 30,
         title: 'Kerjaan',
         jamkerja:'07:30 - 16:45'
         },
         {
         date: new Date(year, month+1, day+2),
-        hours: 12,
         tgl: '01',
         bln: 'Nov',
-        minutes: 30,
         title: 'Kerjaan',
         jamkerja:'07:30 - 16:45'
         },
@@ -802,13 +781,10 @@
                 event.date.getMonth() === currentDate.getMonth() && event.date.getFullYear() === currentDate.getFullYear()
             );
         });
-        document.getElementById("ul-bulananCard").innerHTML = "";
+        document.getElementById("listAbsen").innerHTML = "";
         const eventItems = [];
         if (currentEvents.length) {
         currentEvents.forEach(function (event) {
-            const hours = event.hours;
-            let minutes = event.minutes;
-            if (minutes < 10) minutes = `0${minutes}`;
             eventItems.push({
                 title: event.title,
                 tanggal:event.tgl,
@@ -817,7 +793,7 @@
             });
         });
         eventItems.forEach(function (a) {
-            document.getElementById("ul-bulananCard").innerHTML += 
+            document.getElementById("listAbsen").innerHTML += 
             '<li>'+
                 '<div class="item-content">'+
                 '<div class="item-media">'+
@@ -834,7 +810,7 @@
             '</li>'
         });
     }else{
-        document.getElementById("ul-bulananCard").innerHTML = '<li class="item-content">'+
+        document.getElementById("listAbsen").innerHTML = '<li class="item-content">'+
                 '<div class="item-inner">'+
                     '<div class="item-title text-color-gray">Tidak ada Kerjaan</div>'+
                 '</div>'+
@@ -879,11 +855,9 @@
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
-                    // get loaded data and render thumbnail.
                     document.getElementById("img-custom").src = e.target.result;
                 };
 
-                // read the image file as a data URL.
                 reader.readAsDataURL(this.files[0]);
             };
             },
