@@ -9,6 +9,7 @@ if (document.location.search.indexOf('theme=') >= 0) {
 
 // Init App
 var app = new Framework7({
+    
     id: 'io.framework7.testapp',
     root: '#app',
     theme: 'md',
@@ -45,11 +46,23 @@ var app = new Framework7({
     }
 
 });
+// Pull to refresh content
 
 setTimeout(function () {
     $('.loader-screen').hide();
 }, 2000);
-//$('.introduction').css('min-height', 'calc(100vh - 58px)' )
+$('.introduction').css('min-height', 'calc(100vh - 58px)' )
+
+$(document).on('page:init', function(e){
+     
+    $('.ptr-content').on('ptr:refresh', function (e) {
+        // Emulate 2s loading
+        setTimeout(function () {
+            app.ptr.done(); // or e.detail();
+            
+        }, 2000);
+        });
+})
 
 $(document).on('page:init', function (e) {
     /* background image to cover */

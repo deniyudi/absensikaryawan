@@ -1,40 +1,47 @@
 <template>
-    <div class="page page-content">
-        <div class="appbar bg-color-black">
-            <div class="appbar-inner">
-                <div class="left"></div>
-                <div class="right">
-                    <a href="" class="link back icon-only">
-                        <i class="material-icons" style="color: gray;font-size: 30px;">close</i>
-                    </a>
-                </div>
-            </div>
+    <div class="page">
+    <div class="page-content ptr-content ">
+  <div class="ptr-preloader">
+    <div class="preloader"></div>
+    <div class="ptr-arrow"></div>
+  </div>
+  <div class="list media-list">
+    <ul>
+      <li class="item-content">
+        <div class="item-media"><img src="https://cdn.framework7.io/placeholder/abstract-88x88-1.jpg" width="44"/></div>
+        <div class="item-inner">
+          <div class="item-title-row">
+            <div class="item-title">Yellow Submarine</div>
+          </div>
+          <div class="item-subtitle">Beatles</div>
         </div>
-        <form id="form1" runat="server">
-            <input type='file' id="imgInp" />
-            <img id="blah" src="#" alt="your image" />
-        </form>
-        <p>
-            <label for="imageFile">Upload a photo of yourself:</label>
-            <input type="file" id="imageFile" capture="user" accept="image/*">
-            </p>
-    </div>
+      </li>
+      <li class="item-content">
+        <div class="item-media"><img src="https://cdn.framework7.io/placeholder/abstract-88x88-2.jpg" width="44"/></div>
+        <div class="item-inner">
+          <div class="item-title-row">
+            <div class="item-title">Don't Stop Me Now</div>
+          </div>
+          <div class="item-subtitle">Queen</div>
+        </div>
+      </li>
+      <li class="item-content">
+        <div class="item-media"><img src="https://cdn.framework7.io/placeholder/abstract-88x88-3.jpg" width="44"/></div>
+        <div class="item-inner">
+          <div class="item-title-row">
+            <div class="item-title">Billie Jean</div>
+          </div>
+          <div class="item-subtitle">Michael Jackson</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
 </template>
 
 <script>
-    return{
-        on:{
-            pageInit: function readURL(input){
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
+</script>
 
-                    reader.onload = function (e) {
-                        $('#blah').attr('src', e.target.result);
-                    }
-
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-        }
-    }
+<script src="../js/app.js">
 </script>
