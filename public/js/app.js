@@ -46,6 +46,7 @@ var app = new Framework7({
     }
 
 });
+
 // Pull to refresh content
 
 setTimeout(function () {
@@ -53,13 +54,15 @@ setTimeout(function () {
 }, 2000);
 $('.introduction').css('min-height', 'calc(100vh - 58px)' )
 
+
+
 $(document).on('page:init', function(e){
-     
+
     $('.ptr-content').on('ptr:refresh', function (e) {
         // Emulate 2s loading
         setTimeout(function () {
+            location.reload();
             app.ptr.done(); // or e.detail();
-            
         }, 2000);
         });
 })
