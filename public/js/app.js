@@ -64,6 +64,7 @@ $(document).on('page:init', function(e){
             app.ptr.done();
         }, 2000);
         });
+
 })
 
 $(document).on('page:init', function (e) {
