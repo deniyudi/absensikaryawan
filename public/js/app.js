@@ -58,9 +58,7 @@ $('.introduction').css('min-height', 'calc(100vh - 58px)' )
 
 $(document).on('page:init', function(e){
     $(document, '.ptr-content').on('ptr:refresh', function (e) {
-        console.log(e);
         setTimeout(function () {
-            location.reload();
             app.ptr.done();
         }, 2000);
         });
