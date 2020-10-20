@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-<div class="page page-homepage light ptr-content " data-name="homepage" data-ptr-distance="55" data-ptr-mousewheel="true">
+<div class="page page-homepage light ptr-content " data-name="homepage" data-ptr-mousewheel="true" @ptr:refresh="loadMore">
     <div class="ptr-preloader">
         <div class="preloader"></div>
         <div class="ptr-arrow"></div>
@@ -111,7 +111,7 @@
                         </a>
                     </div>
                     <div class="col resizable" style="min-width: 50px">
-                        <a href="/cam/">
+                        <a href="/coba1/">
                             <span>
                                 <div class="card shadow border-0">
                                     <div class="card-content card-content-padding">
@@ -850,6 +850,29 @@
         },
         methods: {
             //gambar profil
+
+            loadMore: function (e, done) {
+            var self = this;
+            var $ = self.$$;
+
+            setTimeout(function () {
+            // // Add new item
+            // self.items.push({
+            //     picURL: 'https://cdn.framework7.io/placeholder/abstract-88x88-' + (Math.floor(Math.random() * 10) + 1) + '.jpg',
+            //     song: self.songs[Math.floor(Math.random() * self.songs.length)],
+            //     author: self.authors[Math.floor(Math.random() * self.authors.length)],
+            // })
+
+            // // Update state to rerender
+            // self.$setState({
+            //     items: self.items,
+            // });
+
+            // Done
+            done();
+            }, 2000);
+        },
+
             getpick:function(){
                 var self = this;
                 const input = document.getElementById("real-file-aq");
@@ -889,6 +912,7 @@
         on: {
             
             pageInit: function (e, page) {
+                
                 var self = this;
                 var app = self.$app;
                 var $ = self.$;

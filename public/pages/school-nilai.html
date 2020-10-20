@@ -1,0 +1,630 @@
+<template>
+  
+    <div class="page light">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a href="#" class="link back" id="back">
+                        <i class="material-icons">navigate_before</i>
+                    </a>
+                </div>
+                <div class="title" style="margin-left: -10px;">Nilai</div>
+                <div class="right">
+                  <div class="accordion-item-toggle">
+                    <a href="#" id="test">
+                      <i class="icon material-icons">tune</i>
+                    </a>
+                  </div>
+                    <a href="/school/school-nilai-bulanan2/" style="margin-right: -15px;" class="link">
+                        <i class="icon material-icons">event_note</i>
+                    </a>
+                    <a href="#" class="link popover-open" style="margin-right: -15px;" data-popover=".popover-akun">
+                        <figure class="avatar avatar-30 border-0"><img src="{{gambarAktif1}}" alt="" id="gambarAktif1"></figure>
+                    </a>
+                    <a href="#" class="link popover-open icon-only" data-popover=".popover-menu">
+                        <i class="material-icons ">more_vert</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+      <div data-infinite-distance="50" class="page-content infinite-scroll-content ptr-content" @infinite="loadMore" data-ptr-mousewheel="true" @ptr:refresh="loadMore1">
+        <div class="ptr-preloader">
+          <div class="preloader"></div>
+          <div class="ptr-arrow"></div>
+        </div>
+        <div class="block mt-0 mb-0 block-strong no-hairlines-md" style="padding-top: 0px; padding-bottom: 0px;">
+          <div class="accordion-item accor">
+            <div class="accordion-item-content">
+              <div class="list no-hairlines-md">
+                <ul>
+                  <li>
+                    <div class="row no-gap">
+                      <div class="col pr-0">
+                        <div class="item-content item-input item-input-outline pl-0">
+                          <div class="item-inner">
+                            <div class="item-title item-floating-label">Pelajaran</div>
+                            <div class="item-input-wrap input-dropdown-wrap">
+                              <select placeholder="Pilih mapel...">
+                                <option value="Semua">Semua</option>
+                                <option value="Matematika">matematika</option>
+                                <option value="Matematika">Bahasa Indonesia</option>
+                                <option value="Matematika">Bahasa Inggris</option>
+                                <option value="Matematika">Fisika</option>
+                                <option value="Matematika">Kimia</option>
+                                <option value="Matematika">Matematika</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="item-content item-input item-input-outline pl-0">
+                          <div class="item-inner">
+                            <div class="item-title item-floating-label">Jenis Test</div>
+                            <div class="item-input-wrap input-dropdown-wrap">
+                              <select placeholder="Pilih jenis test...">
+                                <option value="Male">Semua</option>
+                                <option value="Female">Ulangan harian</option>
+                                <option value="Female">Ulangan Tengah Semester 1</option>
+                                <option value="Female">Ulangan Semester 1</option>
+                                <option value="Female">Ulangan Tengah Semester 2</option>
+                                <option value="Female">Ulangan Semester 2</option>
+                                <option value="Female">Tryout 1</option>
+                                <option value="Female">Tryout 2</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{#if loading1}}
+        <div class="block mt-0">
+            <div class="list mt-0 mb-0 media-list no-hairlines-between no-hairlines-md">
+              <ul>
+                <li class="item-content skeleton-text">
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">aksjfsjkfkajsbfkbkjsfaksjfkasj</div>
+                    </div>
+                    <div class="item-subtitle">sofahsfjhasjkfhkjshfsk</div>
+                  </div>
+                  <div class="item-media">
+                    <div class="avatar avatar-50 no-shadow border-0 skeleton-block">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content skeleton-text">
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">aksjfsjkfkajsbfkbkjsfaksjfkasj</div>
+                    </div>
+                    <div class="item-subtitle">sofahsfjhasjkfhkjshfsk</div>
+                  </div>
+                  <div class="item-media">
+                    <div class="avatar avatar-50 no-shadow border-0 skeleton-block">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content skeleton-text">
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">aksjfsjkfkajsbfkbkjsfaksjfkasj</div>
+                    </div>
+                    <div class="item-subtitle">sofahsfjhasjkfhkjshfsk</div>
+                  </div>
+                  <div class="item-media">
+                    <div class="avatar avatar-50 no-shadow border-0 skeleton-block">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content skeleton-text">
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">aksjfsjkfkajsbfkbkjsfaksjfkasj</div>
+                    </div>
+                    <div class="item-subtitle">sofahsfjhasjkfhkjshfsk</div>
+                  </div>
+                  <div class="item-media">
+                    <div class="avatar avatar-50 no-shadow border-0 skeleton-block">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content skeleton-text">
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">aksjfsjkfkajsbfkbkjsfaksjfkasj</div>
+                    </div>
+                    <div class="item-subtitle">sofahsfjhasjkfhkjshfsk</div>
+                  </div>
+                  <div class="item-media">
+                    <div class="avatar avatar-50 no-shadow border-0 skeleton-block">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </div>
+        {{else}}
+        <div class="block mt-0">
+            {{#each items}}
+              <a href="/school/nilai/detail/{{type}}/{{mapel}}/{{tanggal}}/{{predikat}}/{{nilai}}/" class="links-list">
+                <div class="card shadow border-0 mb-2">
+                    <div class="card-content card-content-padding">
+                        <div class="row align-items-center">
+                            <div class="col-auto pr-0 align-self-center">
+                                <h6 class="font-weight-normal mb-1 mt-0 text-color-black">{{mapel}}  <span class="small text-mute">{{tanggal}}</span></h6>
+                                <p class="text-mute small text-secondary mt-1">{{type}}</p>
+                            </div>
+                            <div class="col-auto pr-1">
+                                <div class="avatar avatar-50 no-shadow border-0 bg-color-{{color}}">
+                                    <div class="text-color-white">{{nilai}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </a>
+            {{/each}}
+        </div>
+        {{#if hasMoreItems}}
+        <div class="block mt-0">
+          <div class="list mt-0 mb-0 media-list no-hairlines-between no-hairlines-md">
+            <ul>
+              <li class="item-content skeleton-text">
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title">aksjfsjkfkajsbfkbkjsfaksjfkasj</div>
+                  </div>
+                  <div class="item-subtitle">sofahsfjhasjkfhkjshfsk</div>
+                </div>
+                <div class="item-media">
+                  <div class="avatar avatar-50 no-shadow border-0 skeleton-block">
+                  </div>
+                </div>
+              </li>
+              <li class="item-content skeleton-text">
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title">aksjfsjkfkajsbfkbkjsfaksjfkasj</div>
+                  </div>
+                  <div class="item-subtitle">sofahsfjhasjkfhkjshfsk</div>
+                </div>
+                <div class="item-media">
+                  <div class="avatar avatar-50 no-shadow border-0 skeleton-block">
+                  </div>
+                </div>
+              </li>
+              <li class="item-content skeleton-text">
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title">aksjfsjkfkajsbfkbkjsfaksjfkasj</div>
+                  </div>
+                  <div class="item-subtitle">sofahsfjhasjkfhkjshfsk</div>
+                </div>
+                <div class="item-media">
+                  <div class="avatar avatar-50 no-shadow border-0 skeleton-block">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+      </div>
+        {{/if}}
+        {{/if}}
+      </div>
+      <div class="popover popover-akun popover-on-right">
+        <div class="popover-angle"></div>
+            <div class="popover-inner">
+                <div class="list">
+                    <ul id="listakun2">
+                      {{#each akunAll1}}
+                            <li>
+                                <a href="#" @click="tes({{id}})" class="item-link no-chevron popover-close" id="akunclick">
+                                <div class="item-content">
+                                    <div class="item-media">
+                                        <div class="avatar avatar-40 no-shadow bg-color-gray border-0">
+                                            <img src="{{gambar}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="item-inner">
+                                    <div class="item-title text-color-black">{{nama}}<br><span class="text-secondary small mt-0">{{kelas}} - {{sekolah}}</span></div>
+                                    </div>
+                                </div>
+                                </a>
+                            </li>
+                            {{/each}}
+                            <li>
+                                <a href="/school/tambahsiswa/" class="item-link no-chevron popover-close">
+                                    <div class="item-content">
+                                        <div class="item-media">
+                                            <div class="avatar avatar-40 no-shadow bg-color-gray border-0">
+                                                <i class="material-icons text-color-white">person_add</i>
+                                            </div>
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title text-color-black">Tambah Akun</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+      </div>
+        <div class="popover popover-menu popover-on-right" data-backdrop="false" style="width: 100px;">
+          <div class="popover-angle"></div>
+              <div class="popover-inner">
+                  <div class="list">
+                      <ul>
+                          <li>
+                              <a href="/school/bantuan/" class="item-content item-link no-chevron popover-close">
+                                  <div class="item-inner">
+                                  <div class="item-title text-color-black">Bantuan</span></div>
+                                  </div>
+                                </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+      </div>
+      <script>
+        var self = this;
+        var app = self.$app;
+        var $ = self.$;
+        var key = false;
+
+        function k() {
+            var back = document.getElementById("back");
+            back.click();
+        }
+      </script>
+    </div>
+  
+</template>
+  <script>
+    return {
+      data: function () {
+        return {
+          allowInfinite: true,
+          hasMoreItems: true,
+          loading1: true,
+          lastItem: 10,
+          akunAktif1 : [
+                {
+                    id:3,
+                    nama:'Wili Sandi Febriantana',
+                    sekolah:'SMK Brantas Karangkates',
+                    kelas:'X RPL',
+                    gambar:'img/profil1.png',
+                }
+              ],
+          gambarAktif1:'',
+          akunAll1 : [
+          {
+              id:0,
+              nama:'Deni Yudi',
+              sekolah:'SD Permata Bunda',
+              kelas:'Kelas 5',
+              gambar:'data:image/jpeg;base64,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',
+          },
+          {
+              id:1,
+              nama:'Sasi Kanti',
+              sekolah:'SMA Melati',
+              kelas:'X IPA',
+              gambar:'https://1.bp.blogspot.com/-xkSQiVSWVss/WAYh7HS4B4I/AAAAAAAAAKA/cJUtlh3kcSErmHAwW0GLU_6q5NP5wVLegCLcB/s1600/photo%2Bclose%2Bup.jpg',
+          },
+          {
+              id:2,
+              nama:'Erik Setiadi',
+              sekolah:'SMPN Permata Indah',
+              kelas:'Kelas 10 A',
+              gambar:'https://1.bp.blogspot.com/-XCBz9bPl0kQ/WKMHTZjuHsI/AAAAAAAAFE0/DjzRTYzDVSYmswlYXPhHp4oVuRtraCosgCLcB/s1600/mico-pasfoto-3x4.jpg',
+          },
+          ],
+          nilaiArray:[
+          {
+            mapel: 'Matematika',
+            tanggal: '20 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'green',
+            nilai: 95,
+            predikat:'Tuntas',
+            kkm: 70,
+            ratakls: 80
+          },
+          {
+            mapel: 'Fisika',
+            tanggal: '21 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'orange',
+            nilai: 75,
+            predikat:'Tuntas',
+            kkm: 70,
+            ratakls: 75
+          },
+          {
+            mapel: 'Bahasa Indonesia',
+            tanggal: '22 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'red',
+            nilai: 50,
+            predikat:'Belum Tuntas',
+            kkm: 75,
+            ratakls: 85
+          },
+          {
+            mapel: 'Kimia',
+            tanggal: '23 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'orange',
+            nilai: 75,
+            predikat:'Tuntas',
+            kkm: 70,
+            ratakls: 70,
+          },
+          {
+            mapel: 'Sejarah',
+            tanggal: '24 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'green',
+            nilai: 85,
+            predikat:'Tuntas',
+            kkm: 75,
+            ratakls: 90,
+          },
+          {
+            mapel: 'Biologi',
+            tanggal: '25 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'red',
+            nilai: 45,
+            predikat:'Belum Tuntas',
+            kkm: 75,
+            ratakls: 75,
+          },
+          {
+            mapel: 'Agama',
+            tanggal: '26 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'green',
+            nilai: 100,
+            predikat:'Tuntas',
+            kkm: 75,
+            ratakls: 90,
+          },
+          {
+            mapel: 'Matematika',
+            tanggal: '20 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'green',
+            nilai: 95,
+            predikat:'Tuntas',
+            kkm: 70,
+            ratakls: 80
+          },
+          {
+            mapel: 'Fisika',
+            tanggal: '21 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'orange',
+            nilai: 75,
+            predikat:'Tuntas',
+            kkm: 70,
+            ratakls: 75
+          },
+          {
+            mapel: 'Bahasa Indonesia',
+            tanggal: '22 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'red',
+            nilai: 50,
+            predikat:'Belum Tuntas',
+            kkm: 75,
+            ratakls: 85
+          },
+        ],
+        items:[
+        {
+            mapel: 'Matematika',
+            tanggal: '20 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'green',
+            nilai: 95,
+            predikat:'Tuntas',
+            kkm: 70,
+            ratakls: 80
+          },
+          {
+            mapel: 'Fisika',
+            tanggal: '21 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'orange',
+            nilai: 75,
+            predikat:'Tuntas',
+            kkm: 70,
+            ratakls: 75
+          },
+          {
+            mapel: 'Bahasa Indonesia',
+            tanggal: '22 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'red',
+            nilai: 50,
+            predikat:'Belum Tuntas',
+            kkm: 75,
+            ratakls: 85
+          },
+          {
+            mapel: 'Kimia',
+            tanggal: '23 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'orange',
+            nilai: 75,
+            predikat:'Tuntas',
+            kkm: 70,
+            ratakls: 70,
+          },
+          {
+            mapel: 'Sejarah',
+            tanggal: '24 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'green',
+            nilai: 85,
+            predikat:'Tuntas',
+            kkm: 75,
+            ratakls: 90,
+          },
+          {
+            mapel: 'Biologi',
+            tanggal: '25 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'red',
+            nilai: 45,
+            predikat:'Belum Tuntas',
+            kkm: 75,
+            ratakls: 75,
+          },
+          {
+            mapel: 'Agama',
+            tanggal: '26 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'green',
+            nilai: 100,
+            predikat:'Tuntas',
+            kkm: 75,
+            ratakls: 90,
+          },
+          {
+            mapel: 'Matematika',
+            tanggal: '20 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'green',
+            nilai: 95,
+            predikat:'Tuntas',
+            kkm: 70,
+            ratakls: 80
+          },
+          {
+            mapel: 'Fisika',
+            tanggal: '21 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'orange',
+            nilai: 75,
+            predikat:'Tuntas',
+            kkm: 70,
+            ratakls: 75
+          },
+          {
+            mapel: 'Bahasa Indonesia',
+            tanggal: '22 juli 2020',
+            type: 'Ulangan Tengah Semester',
+            color: 'red',
+            nilai: 50,
+            predikat:'Belum Tuntas',
+            kkm: 75,
+            ratakls: 85
+          },
+        ],  
+        }
+      },
+      methods: {
+        tes: function(a) {
+                var self = this;
+                var $ = self.$;
+                var pos = self.akunAll1.map(function(e) { return e.id; }).indexOf(a);
+                [self.akunAktif1[0],self.akunAll1[pos]] = [self.akunAll1[pos],self.akunAktif1[0]];
+                self.$setState({ 
+                    gambarAktif1:self.akunAktif1[0].gambar,
+                });
+                self.$setState({ loading1: true });
+                setTimeout(function() {
+                  self.$setState({ loading1: false });
+                }, 3000);
+                
+        },
+        loadMore1: function (e, done) {
+                var self = this;
+                var $ = self.$$;
+                
+                setTimeout(function() {
+                self.$setState({ loading1: false });
+                }, 4000);
+
+                setTimeout(function () {
+                    self.$setState({
+                        items: self.items,
+                        loading1:true
+                    });
+                // Done
+                done();
+                }, 2000);
+            },
+        loadMore: function () {
+          var self = this;
+          var $ = self.$$;
+          if (!self.allowInfinite) return;
+          self.allowInfinite = false;
+          setTimeout(function () {
+            if (self.lastItem >= 50) {
+              self.$setState({
+                hasMoreItems: false,
+              });
+              return;
+            }
+            for (var i = 0; i <= 9; i++) {
+            self.items.push({
+              mapel: self.nilaiArray[i].mapel,
+              tanggal: self.nilaiArray[i].tanggal,
+              type: self.nilaiArray[i].type,
+              color: self.nilaiArray[i].color,
+              nilai: self.nilaiArray[i].nilai,
+              kkm: self.nilaiArray[i].kkm,
+              ratakls: self.nilaiArray[i].ratakls,
+            },);
+            }
+            self.allowInfinite = true;
+            self.$setState({
+              lastItem: self.lastItem + 10,
+              items: self.items,
+            });
+          }, 1000);
+        }
+      },
+      on:{
+        pageInit:function(e,page){
+          var self = this;
+            var app = self.$app;
+            var $ = self.$;
+            var acc = true;
+            setTimeout(function() {
+                self.$setState({ loading1: false });
+            }, 3000);
+            self.$setState({ 
+                gambarAktif1:self.akunAktif1[0].gambar,   
+            });
+          localStorage.setItem('bantuanValue', 'menunilai');
+          $('#test').on('click', function () {
+            if(acc===true){
+              acc=false;
+              app.accordion.open('.accor');
+            }else{
+              acc=true;
+              app.accordion.close('.accor');
+            };
+            });
+        },
+        pageBeforeRemove:function(){
+          localStorage.removeItem('bantuanValue');
+        }
+      }
+    }
+  </script>
+  

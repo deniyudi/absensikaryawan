@@ -66,8 +66,13 @@ var routes = [
   },
 
   {
+    path: '/coba1/',
+    componentUrl: './pages/school-home.html',
+  },
+
+  {
     path: '/coba/',
-    componentUrl: './pages/coba.html',
+    componentUrl: './pages/school-nilai.html',
   },
   
   {

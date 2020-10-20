@@ -56,14 +56,14 @@ $('.introduction').css('min-height', 'calc(100vh - 58px)' )
 
 
 
-$(document).on('page:init', function(e){
-    $('.ptr-content').on('ptr:refresh', function (e) {
-        setTimeout(function () {
-            app.ptr.done();
-        }, 2000);
-        });
+// $(document).on('page:init', function(e){
+//     $('.ptr-content').on('ptr:refresh', function (e) {
+//         setTimeout(function () {
+//             app.ptr.done();
+//         }, 2000);
+//         });
 
-})
+// })
 
 $(document).on('page:init', function (e) {
     /* background image to cover */
