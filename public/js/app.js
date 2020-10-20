@@ -57,7 +57,7 @@ $('.introduction').css('min-height', 'calc(100vh - 58px)' )
 
 
 $(document).on('page:init', function(e){
-    $(document, '.ptr-content').on('ptr:refresh', function (e) {
+    $('.ptr-content').on('ptr:refresh', function (e) {
         setTimeout(function () {
             app.ptr.done();
         }, 2000);
