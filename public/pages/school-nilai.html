@@ -28,7 +28,7 @@
             </div>
         </div>
         
-      <div data-infinite-distance="50" class="page-content infinite-scroll-content ptr-content" @infinite="loadMore" data-ptr-mousewheel="true" @ptr:refresh="loadMore1">
+      <div data-infinite-distance="50" class="page-content infinite-scroll-content ptr-content" @infinite="loadMore" data-ptr-mousewheel="true" @ptr:refresh="ptr">
         <div class="ptr-preloader">
           <div class="preloader"></div>
           <div class="ptr-arrow"></div>
@@ -550,7 +550,7 @@
                 }, 3000);
                 
         },
-        loadMore1: function (e, done) {
+        ptr: function (e, done) {
                 var self = this;
                 var $ = self.$$;
                 
